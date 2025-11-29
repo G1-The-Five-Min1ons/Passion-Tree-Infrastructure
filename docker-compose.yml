@@ -1,0 +1,89 @@
+version: '3.8'
+
+# This file orchestrates all microservices and infrastructure for local development.
+
+services:
+  ## 1. CORE APPLICATION SERVICES (Built from Source Repos)
+  
+  # Go Backend Service (API Gateway, Orchestrator)
+  backend:
+    container_name: pt_backend
+    build:
+      context: ../Passion-Tree-Backend # <-- Points to the Go Repo folder
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Exposed port for local testing (e.g., http://localhost:8080)
+    volumes:
+      - ../Passion-Tree-Backend:/app # Mount code for fast iteration/hot-reloading
+    environment:
+      # Set internal service connections (uses Docker network names)
+      - AI_SERVICE_HOST=ai_service:8000 
+      - PG_HOST=postgres
+      - REDIS_HOST=redis
+      - KAFKA_BROKERS=kafka:9092
+    depends_on:
+      - ai_service
+      - postgres
+      - redis
+      - kafka
+
+  # FastAPI/Python AI Inference Service
+  ai_service:
+    container_name: pt_ai_service
+    build:
+      context: ../Passion-Tree-AI # <-- Points to the AI Repo folder
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../Passion-Tree-AI:/app # Mount code for fast iteration/hot-reloading
+
+  ## 2. DATA INFRASTRUCTURE SERVICES (Simulating Cloud Services)
+  
+  # Supabase/PostgreSQL (Main Data, User Stat, Item Data, pgvector)
+  postgres:
+    container_name: pt_db
+    image: postgres:15
+    ports:
+      - "5432:5432" # Exposed port for local tools (e.g., DBeaver)
+    environment:
+      - POSTGRES_USER=dev_user
+      - POSTGRES_PASSWORD=dev_pass
+      - POSTGRES_DB=pt_main_db
+    volumes:
+      - db_data:/var/lib/postgresql/data # Volume for data persistence
+
+  # Redis (Online Feature Store / Cache)
+  redis:
+    container_name: pt_redis
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  # Zookeeper (Required by Kafka)
+  zookeeper:
+    image: 'bitnami/zookeeper:3.8'
+    ports: ['2181:2181']
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  # Kafka (Event Stream Hub)
+  kafka:
+    container_name: pt_kafka
+    image: 'bitnami/kafka:3.6'
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092 # Internal network
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://0.0.0.0:9092
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+      - zookeeper
+      
+# DuckDB and Loki are generally run separately (or within the analytical pipeline) 
+# but are omitted here for initial simplicity and resource saving.
+
+# Define named volume for PostgreSQL data persistence
+volumes:
+  db_data:

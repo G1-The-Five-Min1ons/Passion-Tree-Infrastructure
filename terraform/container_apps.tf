@@ -17,9 +17,42 @@ resource "azurerm_container_app" "go_backend" {
   template {
     container {
       name   = "go-app"
-      image  = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest" # ใส่ Image จริงของคุณทีหลัง
+      image  = var.backend_image
       cpu    = 0.5
       memory = "1Gi"
+
+      env {
+        name  = "PORT"
+        value = "8080"
+      }
+      env {
+        name  = "DB_URL"
+        value = var.backend_db_url
+      }
+      env {
+        name  = "AI_SERVICE_URL"
+        value = var.ai_service_url
+      }
+
+      readiness_probe {
+        transport                 = "HTTP"
+        port                      = 8080
+        path                      = "/health"
+        interval_seconds          = 10
+        timeout                   = 2
+        success_count_threshold   = 1
+        failure_count_threshold   = 3
+      }
+
+      liveness_probe {
+        transport           = "HTTP"
+        port                = 8080
+        path                = "/health"
+        initial_delay       = 5
+        interval_seconds    = 10
+        timeout             = 2
+        failure_count_threshold = 3
+      }
     }
   }
 
@@ -30,6 +63,18 @@ resource "azurerm_container_app" "go_backend" {
       percentage      = 100
       latest_revision = true
     }
+  }
+
+  # ดึงอิมเมจจาก ACR ตามแผนใน Diagram ผ่าน Application Gateway
+  registry {
+    server                = var.acr_server
+    username              = var.acr_username
+    password_secret_name  = "acr_password"
+  }
+
+  secret {
+    name  = "acr_password"
+    value = var.acr_password
   }
 }
 
@@ -43,9 +88,46 @@ resource "azurerm_container_app" "ai_service" {
   template {
     container {
       name   = "fastapi-app"
-      image  = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
+      image  = var.ai_image
       cpu    = 0.5
       memory = "1Gi"
+
+      env {
+        name  = "PORT"
+        value = "8000"
+      }
+      env {
+        name  = "REDIS_URL"
+        value = var.redis_url
+      }
+      env {
+        name        = "GROQ_API_KEY"
+        secret_name = "groq_api_key"
+      }
+      env {
+        name  = "DB_URL"
+        value = var.backend_db_url
+      }
+
+      readiness_probe {
+        transport                 = "HTTP"
+        port                      = 8000
+        path                      = "/health"
+        interval_seconds          = 10
+        timeout                   = 2
+        success_count_threshold   = 1
+        failure_count_threshold   = 3
+      }
+
+      liveness_probe {
+        transport           = "HTTP"
+        port                = 8000
+        path                = "/health"
+        initial_delay       = 5
+        interval_seconds    = 10
+        timeout             = 2
+        failure_count_threshold = 3
+      }
     }
   }
 
@@ -56,5 +138,21 @@ resource "azurerm_container_app" "ai_service" {
       percentage      = 100
       latest_revision = true
     }
+  }
+
+  registry {
+    server                = var.acr_server
+    username              = var.acr_username
+    password_secret_name  = "acr_password"
+  }
+
+  secret {
+    name  = "acr_password"
+    value = var.acr_password
+  }
+
+  secret {
+    name  = "groq_api_key"
+    value = var.groq_api_key
   }
 }

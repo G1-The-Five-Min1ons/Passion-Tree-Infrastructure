@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: project_db
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  backend-go:
+    build:
+      context: ../Passion-Tree-Backend
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8080
+      DB_URL: postgres://user:password@db:5432/project_db
+      AI_SERVICE_URL: http://ai-fastapi:8000
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - ai-fastapi
+
+  ai-fastapi:
+    build:
+      context: ../Passion-Tree-AI
+      dockerfile: Dockerfile
+    environment:
+      PORT: 8000
+      REDIS_URL: redis://redis:6379
+      DB_URL: postgres://user:password@db:5432/project_db
+      GROQ_API_KEY: ${GROQ_API_KEY}
+    # Intentionally not exposing 8000 to host to mimic internal service
+    depends_on:
+      - redis
+      - db

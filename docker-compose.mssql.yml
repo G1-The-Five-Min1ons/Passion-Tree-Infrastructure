@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  # Disable PostgreSQL when using Azure SQL
+  db:
+    deploy:
+      replicas: 0
+
+  # Azure SQL Edge for local development
+  azuresql:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    # ports: # ไม่จำเป็นสำหรับ internal communication
+    #   - "${AZURESQL_PORT:-1433}:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $MSSQL_SA_PASSWORD -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  backend-go:
+    environment:
+      # SQL Server connection string (adjust encrypt/trust settings as needed)
+      DB_URL: "${AZURESQL_CONNECTION_STRING:-Server=azuresql,1433;Database=${MSSQL_DB:-project_db};User Id=sa;Password=${MSSQL_SA_PASSWORD};Encrypt=false}"
+    depends_on:
+      azuresql:
+        condition: service_healthy
+
+  ai-fastapi:
+    environment:
+      DB_URL: "${AZURESQL_CONNECTION_STRING:-Server=azuresql,1433;Database=${MSSQL_DB:-project_db};User Id=sa;Password=${MSSQL_SA_PASSWORD};Encrypt=false}"
+    depends_on:
+      azuresql:
+        condition: service_healthy
+
+volumes:
+  mssql-data:

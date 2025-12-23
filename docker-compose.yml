@@ -1,5 +1,7 @@
+version: "3.9"
+
 services:
-  # ฐานข้อมูลสำหรับเก็บพฤติกรรมผู้ใช้และข้อมูลหลัก
+# Database for user behavior and primary data
   db:
     image: postgres:15
     environment:
@@ -8,31 +10,54 @@ services:
       POSTGRES_DB: project_db
     ports:
       - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
-  # ระบบ Cache สำหรับเก็บ Semantic Similarity
+  # Cache for semantic similarity
   redis:
     image: redis:alpine
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   # Go Backend (Gatekeeper)
   backend-go:
-    build: ./backend-go
     environment:
+      PORT: ${BACKEND_PORT:-8080}
       DB_URL: postgres://user:password@db:5432/project_db
-      AI_SERVICE_URL: http://ai-fastapi:8000
+      AI_SERVICE_URL: ${AI_SERVICE_URL:-http://ai-fastapi:8000}
     ports:
-      - "8080:8080"
+      - "${BACKEND_PORT:-8080}:${BACKEND_PORT:-8080}"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+      ai-fastapi:
+        condition: service_started
 
   # FastAPI (AI Logic)
   ai-fastapi:
-    build: ./ai-service-fastapi
     environment:
-      REDIS_URL: redis://redis:6379
+      PORT: ${AI_PORT:-8000}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       DB_URL: postgres://user:password@db:5432/project_db
       GROQ_API_KEY: ${GROQ_API_KEY}
+    ports:
+      - "${AI_PORT:-8000}:${AI_PORT:-8000}"
     depends_on:
-      - redis
-      - db
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+
+volumes:
+  db-data:

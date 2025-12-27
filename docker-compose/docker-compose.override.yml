@@ -1,7 +1,7 @@
 services:
   backend-go:
     build:
-      context: ../Passion-Tree-Backend
+      context: ../../Passion-Tree-Backend
       dockerfile: Dockerfile.dev
     environment:
       PORT: ${BACKEND_PORT:-8080}
@@ -12,7 +12,7 @@ services:
       AZURESQL_DATABASE: ${AZURESQL_DATABASE}
       AI_SERVICE_URL: ${AI_SERVICE_URL:-http://ai-fastapi:8000}
     volumes:
-      - ../Passion-Tree-Backend:/app
+      - ../../Passion-Tree-Backend:/app
       - go-mod-cache:/go/pkg/mod
       - go-build-cache:/root/.cache/go-build
     command: ["air", "-c", ".air.toml"]
@@ -21,14 +21,14 @@ services:
 
   ai-fastapi:
     build:
-      context: ../Passion-Tree-AI
+      context: ../../Passion-Tree-AI
       dockerfile: Dockerfile.dev
     environment:
       PORT: ${AI_PORT:-8000}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       GROQ_API_KEY: ${GROQ_API_KEY}
     volumes:
-      - ../Passion-Tree-AI:/app
+      - ../../Passion-Tree-AI:/app
       - pip-cache:/root/.cache/pip
     command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${AI_PORT:-8000}", "--reload"]
     ports:

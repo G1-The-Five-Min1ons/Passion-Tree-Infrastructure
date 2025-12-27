@@ -2,7 +2,8 @@ set -euo pipefail
 
 # Get the directory where this script is located
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+# Go up 2 levels: Run -> scripts -> Infrastructure
+PROJECT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 
 echo ":rocket: Starting Passion Tree Development Stack"
 
@@ -27,15 +28,13 @@ fi
 
 # Run dev stack (connects directly to Azure SQL Database)
 cd "$PROJECT_DIR"
+COMPOSE_DIR="docker-compose"
 COMPOSE_FILES=("docker-compose.yml" "docker-compose.override.yml")
 
-ARGS=()
+ARGS=(--env-file "$PROJECT_DIR/.env")
 for f in "${COMPOSE_FILES[@]}"; do
-  ARGS+=( -f "$f" )
+  ARGS+=( -f "$COMPOSE_DIR/$f" )
 done
 
-echo ":whale: Building images with --no-cache..."
-docker compose "${ARGS[@]}" build --no-cache
-
-echo ":whale: Starting containers..."
-exec docker compose "${ARGS[@]}" up
+echo "Starting containers (Fast Build mode)..."
+exec docker compose "${ARGS[@]}" up --build

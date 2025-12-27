@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 
-echo "🚀 Starting Passion Tree Development Stack (Azure SQL)"
+echo "🚀 Starting Passion Tree Development Stack"
 
 # Check if .env exists
 if [ ! -f "$PROJECT_DIR/.env" ]; then
@@ -26,9 +26,9 @@ if grep -q "changeme-groq-key" "$PROJECT_DIR/.env"; then
     echo "📝 Please update your .env file with a real API key"
 fi
 
-# Run dev stack with Azure SQL Edge overlay
+# Run dev stack (connects directly to Azure SQL Database)
 cd "$PROJECT_DIR"
-COMPOSE_FILES=("docker-compose.yml" "docker-compose.override.yml" "docker-compose.mssql.yml")
+COMPOSE_FILES=("docker-compose.yml" "docker-compose.override.yml")
 
 ARGS=()
 for f in "${COMPOSE_FILES[@]}"; do

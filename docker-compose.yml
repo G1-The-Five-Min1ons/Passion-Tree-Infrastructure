@@ -1,23 +1,10 @@
 version: "3.9"
 
 services:
-# Database for user behavior and primary data
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: project_db
-    ports:
-      - "5432:5432"
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
+  # PostgreSQL disabled - using Azure SQL instead
+  # db:
+  #   deploy:
+  #     replicas: 0
 
   # Cache for semantic similarity
   redis:
@@ -34,13 +21,15 @@ services:
   backend-go:
     environment:
       PORT: ${BACKEND_PORT:-8080}
-      DB_URL: postgres://user:password@db:5432/project_db
+      AZURESQL_SERVER: ${AZURESQL_SERVER}
+      AZURESQL_PORT: ${AZURESQL_PORT}
+      AZURESQL_USER: ${AZURESQL_USER}
+      AZURESQL_PASSWORD: ${AZURESQL_PASSWORD}
+      AZURESQL_DATABASE: ${AZURESQL_DATABASE}
       AI_SERVICE_URL: ${AI_SERVICE_URL:-http://ai-fastapi:8000}
     ports:
       - "${BACKEND_PORT:-8080}:${BACKEND_PORT:-8080}"
     depends_on:
-      db:
-        condition: service_healthy
       ai-fastapi:
         condition: service_started
 
@@ -49,15 +38,11 @@ services:
     environment:
       PORT: ${AI_PORT:-8000}
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
-      DB_URL: postgres://user:password@db:5432/project_db
       GROQ_API_KEY: ${GROQ_API_KEY}
     ports:
       - "${AI_PORT:-8000}:${AI_PORT:-8000}"
     depends_on:
       redis:
         condition: service_healthy
-      db:
-        condition: service_healthy
 
-volumes:
-  db-data:
+volumes: {}

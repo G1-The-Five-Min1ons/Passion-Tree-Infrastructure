@@ -36,4 +36,4 @@ for f in "${COMPOSE_FILES[@]}"; do
 done
 
 echo "🐳 Starting containers..."
-exec docker compose "${ARGS[@]}" up --build
+exec docker compose "${ARGS[@]}" up --build --no-cache

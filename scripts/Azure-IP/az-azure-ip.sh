@@ -1,7 +1,15 @@
 RESOURCE_GROUP="Passion-Tree"
 SERVER_NAME="passion-tree-db-server"
 
-RULE_NAME="Student-IP" 
+
+# บังคับให้กรอก Rule name
+read -p "Enter Firewall Rule Prefix: " RULE_PREFIX
+if [ -z "$RULE_PREFIX" ]; then
+    echo "Rule prefix is required. Exiting."
+    exit 1
+fi
+# เติม -IP ต่อท้าย
+RULE_NAME="${RULE_PREFIX}-IP"
 
 CURRENT_IP=$(curl -s https://api.ipify.org)
 

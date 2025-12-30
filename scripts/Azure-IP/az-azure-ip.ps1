@@ -2,7 +2,13 @@
 $RESOURCE_GROUP = "Passion-Tree"
 $SERVER_NAME = "passion-tree-db-server"
 
-$RULE_NAME = "Student-IP"
+
+# บังคับให้กรอก Rule name
+$RULE_NAME = Read-Host "Enter Firewall Rule Name"
+if ([string]::IsNullOrWhiteSpace($RULE_NAME)) {
+    Write-Host "Rule name is required. Exiting."
+    exit 1
+}
 
 $CURRENT_IP = (Invoke-RestMethod -Uri "https://api.ipify.org").Content
 

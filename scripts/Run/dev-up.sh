@@ -36,5 +36,15 @@ for f in "${COMPOSE_FILES[@]}"; do
   ARGS+=( -f "$COMPOSE_DIR/$f" )
 done
 
-echo "Starting containers (Fast Build mode)..."
-exec docker compose "${ARGS[@]}" up --build
+
+# Ask user for build or up only
+read -p "Do you want to build images before starting containers? (y/N): " BUILD_CHOICE
+
+if [[ "$BUILD_CHOICE" =~ ^[Yy]$ ]]; then
+    DOCKER_CMD="up --build"
+else
+    DOCKER_CMD="up"
+fi
+
+echo "Starting containers ($DOCKER_CMD mode)..."
+exec docker compose "${ARGS[@]}" $DOCKER_CMD

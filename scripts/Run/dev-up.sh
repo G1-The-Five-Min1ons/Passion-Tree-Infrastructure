@@ -36,7 +36,6 @@ for f in "${COMPOSE_FILES[@]}"; do
   ARGS+=( -f "$COMPOSE_DIR/$f" )
 done
 
-
 # Ask user for build or up only
 read -p "Do you want to build images before starting containers? (y/N): " BUILD_CHOICE
 

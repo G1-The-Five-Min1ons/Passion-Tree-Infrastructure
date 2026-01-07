@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Passion-Tree-API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

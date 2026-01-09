@@ -1,0 +1,16 @@
+meta {
+  name: debug-collection-Info
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8000/api/v1/search/debug/collection/learning_paths
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

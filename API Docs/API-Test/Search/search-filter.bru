@@ -1,0 +1,16 @@
+meta {
+  name: search-filter
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:5000/api/v1/search
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

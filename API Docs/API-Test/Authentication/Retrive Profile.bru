@@ -1,0 +1,20 @@
+meta {
+  name: Retrive Profile
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:5000/api/v1/auth/profile
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNkQyQzlCM0YtODg4Mi00NzQ2LThEMzMtMzNEOTZFMUE4MkIzIiwidXNlcm5hbWUiOiJ0ZXN0dXNlciIsInJvbGUiOiJtZW1iZXIiLCJpc3MiOiJwYXNzaW9uLXRyZWUiLCJleHAiOjE3NjgyMzM4NjAsIm5iZiI6MTc2ODE0NzQ2MCwiaWF0IjoxNzY4MTQ3NDYwfQ.d1LKtlT54CuTxb7FkgBzmHLve_Sc3gpQH94GAIkTZYU
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

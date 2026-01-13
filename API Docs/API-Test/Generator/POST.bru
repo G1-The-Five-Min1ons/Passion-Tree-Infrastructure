@@ -5,11 +5,18 @@ meta {
 }
 
 post {
-  url: 
-  body: none
+  url: http://localhost:8000/api/v1/generator/learning-path
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "topic": "Machine learning"
+  }
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }

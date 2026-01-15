@@ -1,0 +1,214 @@
+[
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนเรื่องฟังก์ชันใน Python เข้าใจมากและสามารถเขียนโค้ดได้เอง",
+      "feeling_reflect": "รู้สึกสนุกและมั่นใจมากขึ้นในการเขียนโปรแกรม"
+    },
+    "answer": { "score": 9, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "ได้ลองแก้โจทย์ด้วยตัวเองตั้งแต่ต้นจนจบ",
+      "feeling_reflect": "รู้สึกภูมิใจและอยากเรียนรู้เพิ่มเติม"
+    },
+    "answer": { "score": 10, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียนรู้การใช้ loop และนำไปใช้แก้ปัญหาได้จริง",
+      "feeling_reflect": "รู้สึกว่าความเข้าใจดีขึ้นอย่างเห็นได้ชัด"
+    },
+    "answer": { "score": 8, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "ได้ฝึกเขียนโค้ดร่วมกับเพื่อนและแลกเปลี่ยนแนวคิดกัน",
+      "feeling_reflect": "รู้สึกสนุกและไม่กดดันเหมือนก่อน"
+    },
+    "answer": { "score": 9, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจหลักการทำงานของ list และ dictionary มากขึ้น",
+      "feeling_reflect": "รู้สึกว่านำไปประยุกต์ใช้กับงานอื่นได้"
+    },
+    "answer": { "score": 8, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนเรื่อง API และสามารถเรียกข้อมูลจากภายนอกได้",
+      "feeling_reflect": "รู้สึกตื่นเต้นและเห็นภาพการใช้งานจริง"
+    },
+    "answer": { "score": 10, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "ได้แก้ error ด้วยตัวเองโดยไม่ต้องพึ่งคำตอบ",
+      "feeling_reflect": "รู้สึกมั่นใจและคิดเป็นระบบมากขึ้น"
+    },
+    "answer": { "score": 9, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจแนวคิดพื้นฐานของ OOP มากขึ้นกว่าที่คิด",
+      "feeling_reflect": "รู้สึกโล่งใจและมีกำลังใจในการเรียนต่อ"
+    },
+    "answer": { "score": 8, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "สามารถเขียนโปรแกรมเล็ก ๆ ให้ทำงานได้ตามที่ต้องการ",
+      "feeling_reflect": "รู้สึกว่าตัวเองพัฒนาขึ้น"
+    },
+    "answer": { "score": 9, "sentiment": "Positive" }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เข้าใจเนื้อหาที่เรียนแทบทั้งหมด",
+      "feeling_reflect": "รู้สึกดีและพอใจกับการเรียนวันนี้"
+    },
+    "answer": { "score": 9, "sentiment": "Positive" }
+  },
+
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนเรื่อง loop แต่ยังต้องใช้เวลาคิดก่อนเขียน",
+      "feeling_reflect": "รู้สึกโอเค ไม่ยากเกินไปแต่ยังไม่คล่อง"
+    },
+    "answer": { "score": 6, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียนเนื้อหาใหม่ที่ไม่เคยเจอมาก่อน",
+      "feeling_reflect": "รู้สึกเฉย ๆ ยังไม่แน่ใจว่าชอบหรือไม่"
+    },
+    "answer": { "score": 5, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจบางส่วนของบทเรียน แต่บางจุดยังงง",
+      "feeling_reflect": "รู้สึกว่าต้องกลับไปทบทวนอีกครั้ง"
+    },
+    "answer": { "score": 6, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนตามเนื้อหาได้แต่ไม่ได้ลงมือทำมาก",
+      "feeling_reflect": "รู้สึกไม่ต่างจากวันอื่นมากนัก"
+    },
+    "answer": { "score": 5, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "ทำโจทย์ได้บางข้อและบางข้อยังทำไม่ได้",
+      "feeling_reflect": "รู้สึกกลาง ๆ ไม่เครียดแต่ก็ไม่มั่นใจ"
+    },
+    "answer": { "score": 6, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เนื้อหาค่อนข้างคุ้นเคยเพราะเคยเรียนมาก่อน",
+      "feeling_reflect": "รู้สึกเฉย ๆ ไม่ตื่นเต้น"
+    },
+    "answer": { "score": 5, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจแนวคิดแต่ยังเขียนโค้ดได้ช้า",
+      "feeling_reflect": "รู้สึกว่าต้องฝึกอีกพอสมควร"
+    },
+    "answer": { "score": 6, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนแบบเร่ง ทำให้ตามไม่ทันบางช่วง",
+      "feeling_reflect": "รู้สึกธรรมดา ไม่ถึงกับแย่"
+    },
+    "answer": { "score": 5, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "บทเรียนไม่ยากแต่รายละเอียดเยอะ",
+      "feeling_reflect": "รู้สึกสับสนเล็กน้อย"
+    },
+    "answer": { "score": 6, "sentiment": "Neutral" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียนรู้ตามแผนที่วางไว้",
+      "feeling_reflect": "รู้สึกปกติ ไม่มีอารมณ์พิเศษ"
+    },
+    "answer": { "score": 5, "sentiment": "Neutral" }
+  },
+
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนเรื่อง OOP แต่ไม่เข้าใจเลย",
+      "feeling_reflect": "รู้สึกท้อและเครียด"
+    },
+    "answer": { "score": 3, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "ทำ workshop แล้วโค้ด error ตลอด",
+      "feeling_reflect": "รู้สึกหงุดหงิดและหมดกำลังใจ"
+    },
+    "answer": { "score": 2, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เนื้อหาเร็วเกินไปจนตามไม่ทัน",
+      "feeling_reflect": "รู้สึกเครียดและสับสน"
+    },
+    "answer": { "score": 3, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "พยายามทำโจทย์แต่ไม่สำเร็จ",
+      "feeling_reflect": "รู้สึกผิดหวังในตัวเอง"
+    },
+    "answer": { "score": 2, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้ไม่เข้าใจเนื้อหาส่วนใหญ่ที่เรียน",
+      "feeling_reflect": "รู้สึกเหนื่อยและไม่อยากเรียนต่อ"
+    },
+    "answer": { "score": 1, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "โค้ดที่เขียนไม่ทำงานตามที่คิดไว้",
+      "feeling_reflect": "uรู้สึกเครียดและหงุดหงิดมาก"
+    },
+    "answer": { "score": 2, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียนแล้วตามเพื่อนไม่ทัน",
+      "feeling_reflect": "รู้สึกกดดันและไม่มั่นใจ"
+    },
+    "answer": { "score": 3, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "ไม่เข้าใจคำอธิบายของบทเรียน",
+      "feeling_reflect": "รู้สึกสับสนและเครียด"
+    },
+    "answer": { "score": 2, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "พยายามตั้งใจเรียนแต่ยังไม่เข้าใจ",
+      "feeling_reflect": "รู้สึกหมดแรงและท้อแท้"
+    },
+    "answer": { "score": 1, "sentiment": "Negative" }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียนไม่ค่อยรู้เรื่อง",
+      "feeling_reflect": "รู้สึกแย่และไม่มั่นใจในตัวเอง"
+    },
+    "answer": { "score": 2, "sentiment": "Negative" }
+  }
+]

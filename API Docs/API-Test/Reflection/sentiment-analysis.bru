@@ -1,0 +1,23 @@
+meta {
+  name: sentiment-analysis
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/api/v1/sentiment/analyze
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "what_learned": "Learn about function in Python and how to use it i have a little bit problem with functioncalling",
+      "feelings_after_learning": "I feel very fun and confident after learning about function in Python"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

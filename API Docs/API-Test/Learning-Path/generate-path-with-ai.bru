@@ -1,0 +1,26 @@
+meta {
+  name: generate-path-with-ai
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8080/api/v1/learningpaths/:path_id/generate
+  body: json
+  auth: inherit
+}
+
+params:path {
+  path_id: <path_id>
+}
+
+body:json {
+  {
+    "topic": "Python programming"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

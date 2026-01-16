@@ -1,0 +1,30 @@
+meta {
+  name: reorder-nodes
+  type: http
+  seq: 11
+}
+
+put {
+  url: http://localhost:8080/api/v1/learningpaths/:path_id/nodes/reorder
+  body: json
+  auth: inherit
+}
+
+params:path {
+  path_id: <path_id>
+}
+
+body:json {
+  {
+    "node_ids": [
+      "<node_id_1>",
+      "<node_id_2>",
+      "<node_id_3>"
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

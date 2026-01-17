@@ -1,213 +1,1043 @@
 [
   {
     "question": {
-      "learning_reflect": "วันนี้เรียนเรื่องฟังก์ชันใน Python เข้าใจมากและสามารถเขียนโค้ดได้เอง",
-      "feeling_reflect": "รู้สึกสนุกและมั่นใจมากขึ้นในการเขียนโปรแกรม"
+      "learning_reflect": "วันนี้เข้าใจเรื่อง function ใน Python มากขึ้นและสามารถเขียนโค้ดได้เอง",
+      "feeling_reflect": "รู้สึกมั่นใจและสนุกกับการเรียนมาก"
     },
-    "answer": { "score": 9, "sentiment": "Positive" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.0,
+      "summary": "ผู้เรียนเข้าใจเนื้อหาและสามารถนำไปใช้ได้จริง",
+      "advanced": {
+        "primary_emotion": "Confident",
+        "confidence_score": 0.85,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เขียน mini project ด้วย function", "ฝึก refactor โค้ด"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "ได้ลองแก้โจทย์ด้วยตัวเองตั้งแต่ต้นจนจบ",
-      "feeling_reflect": "รู้สึกภูมิใจและอยากเรียนรู้เพิ่มเติม"
-    },
-    "answer": { "score": 10, "sentiment": "Positive" }
-  },
-  {
-    "question": {
-      "learning_reflect": "เรียนรู้การใช้ loop และนำไปใช้แก้ปัญหาได้จริง",
-      "feeling_reflect": "รู้สึกว่าความเข้าใจดีขึ้นอย่างเห็นได้ชัด"
-    },
-    "answer": { "score": 8, "sentiment": "Positive" }
-  },
-  {
-    "question": {
-      "learning_reflect": "ได้ฝึกเขียนโค้ดร่วมกับเพื่อนและแลกเปลี่ยนแนวคิดกัน",
-      "feeling_reflect": "รู้สึกสนุกและไม่กดดันเหมือนก่อน"
-    },
-    "answer": { "score": 9, "sentiment": "Positive" }
-  },
-  {
-    "question": {
-      "learning_reflect": "เข้าใจหลักการทำงานของ list และ dictionary มากขึ้น",
-      "feeling_reflect": "รู้สึกว่านำไปประยุกต์ใช้กับงานอื่นได้"
-    },
-    "answer": { "score": 8, "sentiment": "Positive" }
-  },
-  {
-    "question": {
-      "learning_reflect": "วันนี้เรียนเรื่อง API และสามารถเรียกข้อมูลจากภายนอกได้",
+      "learning_reflect": "ได้ลองเรียก API ด้วย Python และดึงข้อมูลมาแสดงผล",
       "feeling_reflect": "รู้สึกตื่นเต้นและเห็นภาพการใช้งานจริง"
     },
-    "answer": { "score": 10, "sentiment": "Positive" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.5,
+      "summary": "ผู้เรียนมีความเข้าใจเชิงประยุกต์สูง",
+      "advanced": {
+        "primary_emotion": "Excited",
+        "confidence_score": 0.9,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เชื่อม API กับ frontend", "เพิ่ม error handling"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "ได้แก้ error ด้วยตัวเองโดยไม่ต้องพึ่งคำตอบ",
-      "feeling_reflect": "รู้สึกมั่นใจและคิดเป็นระบบมากขึ้น"
+      "learning_reflect": "เข้าใจการใช้ loop และ conditional ได้ดีขึ้น",
+      "feeling_reflect": "รู้สึกว่าการคิดเป็นขั้นตอนชัดเจนขึ้น"
     },
-    "answer": { "score": 9, "sentiment": "Positive" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.5,
+      "summary": "ผู้เรียนเริ่มคิดเชิงตรรกะได้ดี",
+      "advanced": {
+        "primary_emotion": "Satisfied",
+        "confidence_score": 0.8,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกเขียนโจทย์ logic เพิ่ม", "ลองแก้โจทย์ยากขึ้น"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "เข้าใจแนวคิดพื้นฐานของ OOP มากขึ้นกว่าที่คิด",
-      "feeling_reflect": "รู้สึกโล่งใจและมีกำลังใจในการเรียนต่อ"
+      "learning_reflect": "วันนี้เข้าใจ SQL Join และเขียน query ได้ถูกต้อง",
+      "feeling_reflect": "รู้สึกภูมิใจและมั่นใจมากขึ้น"
     },
-    "answer": { "score": 8, "sentiment": "Positive" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.0,
+      "summary": "ผู้เรียนเข้าใจการเชื่อมข้อมูลหลายตารางได้ดี",
+      "advanced": {
+        "primary_emotion": "Proud",
+        "confidence_score": 0.85,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึก join มากกว่า 3 table", "ลอง optimize query"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "พรีเซนต์โปรเจกต์หน้าห้องได้ครบตามที่เตรียมไว้",
+      "feeling_reflect": "รู้สึกประหม่าแต่ก็ภูมิใจในตัวเอง"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.0,
+      "summary": "ผู้เรียนพัฒนาทักษะการสื่อสารได้ดี",
+      "advanced": {
+        "primary_emotion": "Proud",
+        "confidence_score": 0.75,
+        "struggle_point": "Public speaking",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกสรุปให้กระชับ", "ซ้อมพูดล่วงหน้า"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียน SQL Join เข้าใจหลักการแต่ยังต้องใช้เวลาคิด",
+      "feeling_reflect": "รู้สึกโอเคแต่ยังไม่มั่นใจมาก"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.5,
+      "summary": "ผู้เรียนเข้าใจระดับพื้นฐานแต่ยังไม่คล่อง",
+      "advanced": {
+        "primary_emotion": "Unsure",
+        "confidence_score": 0.55,
+        "struggle_point": "Join condition",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึก query join วันละ 3 ข้อ", "ทบทวน ER Diagram"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เรียน React component แต่ยังงงเรื่อง props",
+      "feeling_reflect": "รู้สึกสับสนเล็กน้อยแต่ไม่ถึงกับท้อ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.0,
+      "summary": "ผู้เรียนเริ่มเข้าใจ React แต่ยังไม่เชื่อมโยงภาพรวม",
+      "advanced": {
+        "primary_emotion": "Confused",
+        "confidence_score": 0.5,
+        "struggle_point": "Props flow",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["วาด component tree", "ฝึกส่ง props"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียน Python แล้วสนุกแต่ยังงงการประยุกต์ใช้",
+      "feeling_reflect": "รู้สึกกดดันและไม่มั่นใจ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.5,
+      "summary": "ผู้เรียนเข้าใจพื้นฐานแต่ยังสับสนการใช้งานจริง",
+      "advanced": {
+        "primary_emotion": "Confused",
+        "confidence_score": 0.5,
+        "struggle_point": "Real-world application",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดู use case เพิ่ม", "ฝึกโจทย์สถานการณ์จริง"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจเนื้อหาบางส่วนแต่บางจุดยังตามไม่ทัน",
+      "feeling_reflect": "รู้สึกเฉย ๆ ไม่เครียดมาก"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 5.5,
+      "summary": "ผู้เรียนมีความเข้าใจไม่สม่ำเสมอ",
+      "advanced": {
+        "primary_emotion": "Neutral",
+        "confidence_score": 0.45,
+        "struggle_point": "Content speed",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ทบทวนบทเรียนย้อนหลัง", "จด note เพิ่ม"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียน OOP แล้วไม่เข้าใจ class กับ object",
+      "feeling_reflect": "รู้สึกเครียดและท้อ"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 3.5,
+      "summary": "ผู้เรียนยังไม่เข้าใจแนวคิด OOP และมีความเครียดสูง",
+      "advanced": {
+        "primary_emotion": "Frustrated",
+        "confidence_score": 0.3,
+        "struggle_point": "OOP abstraction",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดูตัวอย่างจากชีวิตจริง", "ฝึกเขียน class ง่าย ๆ"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ทำ SQL lab แล้ว query ไม่ออก",
+      "feeling_reflect": "รู้สึกหงุดหงิดและหมดแรง"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.5,
+      "summary": "ผู้เรียนติดปัญหาด้าน logic และขาดความมั่นใจ",
+      "advanced": {
+        "primary_emotion": "Frustrated",
+        "confidence_score": 0.25,
+        "struggle_point": "Query logic",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["แยก query เป็น step", "ฝึก debug ทีละส่วน"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียน AI concept แล้วไม่เข้าใจว่า model ทำงานยังไง",
+      "feeling_reflect": "รู้สึกกลัววิชานี้"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.0,
+      "summary": "ผู้เรียนขาดความเข้าใจพื้นฐานและมีความกังวลสูง",
+      "advanced": {
+        "primary_emotion": "Anxious",
+        "confidence_score": 0.2,
+        "struggle_point": "Model intuition",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เริ่มจาก visual explanation", "เรียนตัวอย่างง่าย"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เข้าใจเรื่อง function ใน Python มากขึ้นและสามารถเขียนโค้ดได้เอง",
+      "feeling_reflect": "รู้สึกมั่นใจและสนุกกับการเรียนมาก"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.0,
+      "summary": "ผู้เรียนเข้าใจเนื้อหาและสามารถนำไปใช้ได้จริง",
+      "advanced": {
+        "primary_emotion": "Confident",
+        "confidence_score": 0.85,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เขียน mini project ด้วย function", "ฝึก refactor โค้ด"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ได้ลองเรียก API ด้วย Python และดึงข้อมูลมาแสดงผล",
+      "feeling_reflect": "รู้สึกตื่นเต้นและเห็นภาพการใช้งานจริง"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.5,
+      "summary": "ผู้เรียนมีความเข้าใจเชิงประยุกต์สูง",
+      "advanced": {
+        "primary_emotion": "Excited",
+        "confidence_score": 0.9,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เชื่อม API กับ frontend", "เพิ่ม error handling"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจการใช้ loop และ if else ได้ดีขึ้น",
+      "feeling_reflect": "รู้สึกว่าการคิดเป็นขั้นตอนชัดเจนขึ้น"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.5,
+      "summary": "ผู้เรียนเริ่มคิดเชิงตรรกะได้ดี",
+      "advanced": {
+        "primary_emotion": "Satisfied",
+        "confidence_score": 0.8,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกโจทย์ logic เพิ่ม", "ลองโจทย์ยากขึ้น"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เข้าใจ SQL Join และสามารถเขียน query ได้ถูกต้อง",
+      "feeling_reflect": "รู้สึกภูมิใจและมั่นใจมากขึ้น"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.0,
+      "summary": "ผู้เรียนเข้าใจการเชื่อมข้อมูลหลายตารางได้ดี",
+      "advanced": {
+        "primary_emotion": "Proud",
+        "confidence_score": 0.85,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึก join หลาย table", "ลอง optimize query"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "พรีเซนต์โปรเจกต์หน้าห้องได้ครบตามที่เตรียมไว้",
+      "feeling_reflect": "รู้สึกประหม่าแต่ภูมิใจในตัวเอง"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.0,
+      "summary": "ผู้เรียนพัฒนาทักษะการสื่อสารได้ดี",
+      "advanced": {
+        "primary_emotion": "Proud",
+        "confidence_score": 0.75,
+        "struggle_point": "Public speaking",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกสรุปให้กระชับ", "ซ้อมพูดล่วงหน้า"]
+      }
+    }
   },
   {
     "question": {
       "learning_reflect": "สามารถเขียนโปรแกรมเล็ก ๆ ให้ทำงานได้ตามที่ต้องการ",
       "feeling_reflect": "รู้สึกว่าตัวเองพัฒนาขึ้น"
     },
-    "answer": { "score": 9, "sentiment": "Positive" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.5,
+      "summary": "ผู้เรียนมีพัฒนาการด้านทักษะเขียนโปรแกรม",
+      "advanced": {
+        "primary_emotion": "Motivated",
+        "confidence_score": 0.8,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เพิ่ม feature ให้โปรแกรม", "ฝึก clean code"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "วันนี้เข้าใจเนื้อหาที่เรียนแทบทั้งหมด",
-      "feeling_reflect": "รู้สึกดีและพอใจกับการเรียนวันนี้"
+      "learning_reflect": "เข้าใจแนวคิดพื้นฐานของ OOP มากขึ้น",
+      "feeling_reflect": "รู้สึกโล่งใจและมีกำลังใจ"
     },
-    "answer": { "score": 9, "sentiment": "Positive" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.0,
+      "summary": "ผู้เรียนเริ่มเข้าใจ abstraction",
+      "advanced": {
+        "primary_emotion": "Relieved",
+        "confidence_score": 0.7,
+        "struggle_point": "Inheritance",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกเขียน class เพิ่ม", "ดูตัวอย่าง OOP"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ทำ group project ได้ตามแผนที่วางไว้",
+      "feeling_reflect": "รู้สึกดีที่ทำงานร่วมกับเพื่อนได้"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.5,
+      "summary": "ผู้เรียนมีทักษะ teamwork ที่ดี",
+      "advanced": {
+        "primary_emotion": "Happy",
+        "confidence_score": 0.8,
+        "struggle_point": "Time management",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["แบ่งงานให้ชัดเจนขึ้น", "ฝึกสื่อสารในทีม"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจการใช้ Git เบื้องต้น",
+      "feeling_reflect": "รู้สึกว่าช่วยให้ทำงานง่ายขึ้น"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.0,
+      "summary": "ผู้เรียนเข้าใจเครื่องมือพื้นฐาน",
+      "advanced": {
+        "primary_emotion": "Satisfied",
+        "confidence_score": 0.75,
+        "struggle_point": "Merge conflict",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกใช้ branch", "ลองแก้ conflict"]
+      }
+    }
   },
 
   {
     "question": {
-      "learning_reflect": "วันนี้เรียนเรื่อง loop แต่ยังต้องใช้เวลาคิดก่อนเขียน",
-      "feeling_reflect": "รู้สึกโอเค ไม่ยากเกินไปแต่ยังไม่คล่อง"
+      "learning_reflect": "เรียน SQL Join เข้าใจหลักการแต่ยังต้องคิดนาน",
+      "feeling_reflect": "รู้สึกโอเคแต่ยังไม่มั่นใจ"
     },
-    "answer": { "score": 6, "sentiment": "Neutral" }
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.5,
+      "summary": "ผู้เรียนเข้าใจพื้นฐานแต่ยังไม่คล่อง",
+      "advanced": {
+        "primary_emotion": "Unsure",
+        "confidence_score": 0.55,
+        "struggle_point": "Join condition",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึก query เพิ่ม", "ทบทวน ER Diagram"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "เรียนเนื้อหาใหม่ที่ไม่เคยเจอมาก่อน",
-      "feeling_reflect": "รู้สึกเฉย ๆ ยังไม่แน่ใจว่าชอบหรือไม่"
-    },
-    "answer": { "score": 5, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "เข้าใจบางส่วนของบทเรียน แต่บางจุดยังงง",
-      "feeling_reflect": "รู้สึกว่าต้องกลับไปทบทวนอีกครั้ง"
-    },
-    "answer": { "score": 6, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "วันนี้เรียนตามเนื้อหาได้แต่ไม่ได้ลงมือทำมาก",
-      "feeling_reflect": "รู้สึกไม่ต่างจากวันอื่นมากนัก"
-    },
-    "answer": { "score": 5, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "ทำโจทย์ได้บางข้อและบางข้อยังทำไม่ได้",
-      "feeling_reflect": "รู้สึกกลาง ๆ ไม่เครียดแต่ก็ไม่มั่นใจ"
-    },
-    "answer": { "score": 6, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "เนื้อหาค่อนข้างคุ้นเคยเพราะเคยเรียนมาก่อน",
-      "feeling_reflect": "รู้สึกเฉย ๆ ไม่ตื่นเต้น"
-    },
-    "answer": { "score": 5, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "เข้าใจแนวคิดแต่ยังเขียนโค้ดได้ช้า",
-      "feeling_reflect": "รู้สึกว่าต้องฝึกอีกพอสมควร"
-    },
-    "answer": { "score": 6, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "วันนี้เรียนแบบเร่ง ทำให้ตามไม่ทันบางช่วง",
-      "feeling_reflect": "รู้สึกธรรมดา ไม่ถึงกับแย่"
-    },
-    "answer": { "score": 5, "sentiment": "Neutral" }
-  },
-  {
-    "question": {
-      "learning_reflect": "บทเรียนไม่ยากแต่รายละเอียดเยอะ",
+      "learning_reflect": "เรียน React component แต่ยังงงเรื่อง props",
       "feeling_reflect": "รู้สึกสับสนเล็กน้อย"
     },
-    "answer": { "score": 6, "sentiment": "Neutral" }
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.0,
+      "summary": "ผู้เรียนยังไม่เชื่อมโยงโครงสร้าง component",
+      "advanced": {
+        "primary_emotion": "Confused",
+        "confidence_score": 0.5,
+        "struggle_point": "Props flow",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["วาด component tree", "ฝึกส่ง props"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "เรียนรู้ตามแผนที่วางไว้",
-      "feeling_reflect": "รู้สึกปกติ ไม่มีอารมณ์พิเศษ"
+      "learning_reflect": "เรียน Python แล้วเข้าใจแต่ยังไม่คล่อง",
+      "feeling_reflect": "รู้สึกกลาง ๆ"
     },
-    "answer": { "score": 5, "sentiment": "Neutral" }
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.0,
+      "summary": "ผู้เรียนยังต้องฝึกซ้ำ",
+      "advanced": {
+        "primary_emotion": "Neutral",
+        "confidence_score": 0.5,
+        "struggle_point": "Syntax fluency",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกเขียนทุกวัน", "ทำโจทย์สั้น ๆ"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "วันนี้เรียนเรื่อง OOP แต่ไม่เข้าใจเลย",
-      "feeling_reflect": "รู้สึกท้อและเครียด"
+      "learning_reflect": "เข้าใจเนื้อหาแต่บางจุดตามไม่ทัน",
+      "feeling_reflect": "รู้สึกเฉย ๆ"
     },
-    "answer": { "score": 3, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 5.5,
+      "summary": "ผู้เรียนเข้าใจไม่สม่ำเสมอ",
+      "advanced": {
+        "primary_emotion": "Indifferent",
+        "confidence_score": 0.45,
+        "struggle_point": "Content speed",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดูวิดีโอย้อนหลัง", "จดโน้ตเพิ่ม"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "ทำ workshop แล้วโค้ด error ตลอด",
-      "feeling_reflect": "รู้สึกหงุดหงิดและหมดกำลังใจ"
+      "learning_reflect": "เรียน OOP แล้วไม่เข้าใจ class กับ object",
+      "feeling_reflect": "รู้สึกเครียดและท้อ"
     },
-    "answer": { "score": 2, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 3.5,
+      "summary": "ผู้เรียนยังไม่เข้าใจแนวคิด OOP",
+      "advanced": {
+        "primary_emotion": "Frustrated",
+        "confidence_score": 0.3,
+        "struggle_point": "OOP abstraction",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดูตัวอย่างจากชีวิตจริง", "ฝึกเขียน class ง่าย ๆ"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "เนื้อหาเร็วเกินไปจนตามไม่ทัน",
-      "feeling_reflect": "รู้สึกเครียดและสับสน"
+      "learning_reflect": "ทำ SQL lab แล้ว query ไม่ออก",
+      "feeling_reflect": "รู้สึกหงุดหงิดและหมดแรง"
     },
-    "answer": { "score": 3, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.5,
+      "summary": "ผู้เรียนติดปัญหาด้าน logic",
+      "advanced": {
+        "primary_emotion": "Frustrated",
+        "confidence_score": 0.25,
+        "struggle_point": "Query logic",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["แยก query เป็นขั้น", "ฝึก debug"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "พยายามทำโจทย์แต่ไม่สำเร็จ",
-      "feeling_reflect": "รู้สึกผิดหวังในตัวเอง"
+      "learning_reflect": "เรียน AI แล้วไม่เข้าใจการทำงานของ model",
+      "feeling_reflect": "รู้สึกกลัวและไม่มั่นใจ"
     },
-    "answer": { "score": 2, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.0,
+      "summary": "ผู้เรียนขาดความเข้าใจพื้นฐาน",
+      "advanced": {
+        "primary_emotion": "Anxious",
+        "confidence_score": 0.2,
+        "struggle_point": "Model intuition",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เริ่มจาก concept ง่าย", "ดูภาพประกอบ"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "วันนี้ไม่เข้าใจเนื้อหาส่วนใหญ่ที่เรียน",
-      "feeling_reflect": "รู้สึกเหนื่อยและไม่อยากเรียนต่อ"
+      "learning_reflect": "เรียนไม่ค่อยเข้าใจเนื้อหาวันนี้",
+      "feeling_reflect": "รู้สึกเหนื่อยและท้อ"
     },
-    "answer": { "score": 1, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.0,
+      "summary": "ผู้เรียนมีความเครียดและพลังงานต่ำ",
+      "advanced": {
+        "primary_emotion": "Exhausted",
+        "confidence_score": 0.2,
+        "struggle_point": "Overall comprehension",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["พักผ่อนให้เพียงพอ", "ทบทวนภายหลัง"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "โค้ดที่เขียนไม่ทำงานตามที่คิดไว้",
-      "feeling_reflect": "uรู้สึกเครียดและหงุดหงิดมาก"
-    },
-    "answer": { "score": 2, "sentiment": "Negative" }
-  },
-  {
-    "question": {
-      "learning_reflect": "เรียนแล้วตามเพื่อนไม่ทัน",
+      "learning_reflect": "ตามบทเรียนไม่ทันเพื่อน",
       "feeling_reflect": "รู้สึกกดดันและไม่มั่นใจ"
     },
-    "answer": { "score": 3, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 3.0,
+      "summary": "ผู้เรียนมีความกดดันจากการเปรียบเทียบ",
+      "advanced": {
+        "primary_emotion": "Insecure",
+        "confidence_score": 0.3,
+        "struggle_point": "Learning pace",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เรียนตามจังหวะตัวเอง", "ขอคำแนะนำเพิ่มเติม"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "ไม่เข้าใจคำอธิบายของบทเรียน",
-      "feeling_reflect": "รู้สึกสับสนและเครียด"
+      "learning_reflect": "เริ่มเข้าใจโครงสร้าง backend มากขึ้น",
+      "feeling_reflect": "รู้สึกมีกำลังใจขึ้น"
     },
-    "answer": { "score": 2, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.0,
+      "summary": "ผู้เรียนเริ่มเห็นภาพการทำงานของระบบฝั่งเซิร์ฟเวอร์",
+      "advanced": {
+        "primary_emotion": "Motivated",
+        "confidence_score": 0.75,
+        "struggle_point": "System overview",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ลองเขียน API เพิ่ม", "ศึกษา flow request-response"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "พยายามตั้งใจเรียนแต่ยังไม่เข้าใจ",
-      "feeling_reflect": "รู้สึกหมดแรงและท้อแท้"
+      "learning_reflect": "เข้าใจ REST API และ HTTP method",
+      "feeling_reflect": "รู้สึกว่าสิ่งที่เรียนเริ่มต่อกัน"
     },
-    "answer": { "score": 1, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.5,
+      "summary": "ผู้เรียนเข้าใจแนวคิดการสื่อสารของระบบ",
+      "advanced": {
+        "primary_emotion": "Satisfied",
+        "confidence_score": 0.8,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกออกแบบ API", "เพิ่ม validation"]
+      }
+    }
   },
   {
     "question": {
-      "learning_reflect": "วันนี้เรียนไม่ค่อยรู้เรื่อง",
-      "feeling_reflect": "รู้สึกแย่และไม่มั่นใจในตัวเอง"
+      "learning_reflect": "วันนี้โค้ดทำงานได้ตามที่คิดไว้",
+      "feeling_reflect": "รู้สึกดีและภูมิใจ"
     },
-    "answer": { "score": 2, "sentiment": "Negative" }
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.0,
+      "summary": "ผู้เรียนสามารถแก้ปัญหาได้ด้วยตนเอง",
+      "advanced": {
+        "primary_emotion": "Proud",
+        "confidence_score": 0.85,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เพิ่ม test case", "refactor โค้ด"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เริ่มเข้าใจ database schema",
+      "feeling_reflect": "รู้สึกโอเคแต่ยังไม่มั่นใจทั้งหมด"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.5,
+      "summary": "ผู้เรียนเข้าใจโครงสร้างข้อมูลในระดับพื้นฐาน",
+      "advanced": {
+        "primary_emotion": "Unsure",
+        "confidence_score": 0.55,
+        "struggle_point": "Relation design",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ออกแบบ schema เพิ่ม", "ดูตัวอย่างจริง"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ฟังเนื้อหาเข้าใจแต่ยังทำเองไม่ค่อยได้",
+      "feeling_reflect": "รู้สึกเฉย ๆ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 5.5,
+      "summary": "ผู้เรียนยังขาดการลงมือปฏิบัติ",
+      "advanced": {
+        "primary_emotion": "Neutral",
+        "confidence_score": 0.45,
+        "struggle_point": "Hands-on practice",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกตามตัวอย่าง", "ทำ lab ซ้ำ"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ตามเนื้อหาได้บ้างแต่บางช่วงหลุด",
+      "feeling_reflect": "รู้สึกกลาง ๆ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 5.0,
+      "summary": "ผู้เรียนมีสมาธิไม่สม่ำเสมอ",
+      "advanced": {
+        "primary_emotion": "Distracted",
+        "confidence_score": 0.45,
+        "struggle_point": "Focus",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ทบทวนหลังเรียน", "จดโน้ตย่อ"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจแนวคิดแต่ยังอธิบายให้คนอื่นไม่ได้",
+      "feeling_reflect": "รู้สึกไม่มั่นใจ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.0,
+      "summary": "ผู้เรียนเข้าใจเชิงรับแต่ยังไม่เชิงลึก",
+      "advanced": {
+        "primary_emotion": "Unsure",
+        "confidence_score": 0.5,
+        "struggle_point": "Concept articulation",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ลองสรุปเป็นคำของตัวเอง", "อธิบายให้เพื่อนฟัง"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เนื้อหายากมากตามไม่ทัน",
+      "feeling_reflect": "รู้สึกท้อ"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 3.0,
+      "summary": "ผู้เรียนมีปัญหาความเข้าใจเนื้อหาที่ซับซ้อน",
+      "advanced": {
+        "primary_emotion": "Discouraged",
+        "confidence_score": 0.3,
+        "struggle_point": "Complex concept",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["เริ่มจากพื้นฐาน", "ขอคำอธิบายเพิ่มเติม"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ลองทำตามแล้วโค้ด error ตลอด",
+      "feeling_reflect": "รู้สึกหงุดหงิด"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.5,
+      "summary": "ผู้เรียนติดปัญหาการ debug",
+      "advanced": {
+        "primary_emotion": "Frustrated",
+        "confidence_score": 0.25,
+        "struggle_point": "Debugging",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["อ่าน error message ให้ละเอียด", "ฝึก debug ทีละขั้น"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ไม่เข้าใจว่าทำไมโค้ดถึงต้องเขียนแบบนี้",
+      "feeling_reflect": "รู้สึกสับสนมาก"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.0,
+      "summary": "ผู้เรียนขาดความเข้าใจเชิงเหตุผลของโค้ด",
+      "advanced": {
+        "primary_emotion": "Confused",
+        "confidence_score": 0.2,
+        "struggle_point": "Code reasoning",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดูภาพรวมก่อนลงรายละเอียด", "ถามคำถามให้ชัดเจน"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียนแล้วรู้สึกตามไม่ทันตั้งแต่ต้น",
+      "feeling_reflect": "รู้สึกเครียด"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.0,
+      "summary": "ผู้เรียนมีความเครียดจากช่องว่างความรู้",
+      "advanced": {
+        "primary_emotion": "Stressed",
+        "confidence_score": 0.2,
+        "struggle_point": "Knowledge gap",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ทบทวนพื้นฐาน", "เรียนเสริมเพิ่มเติม"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "รู้สึกว่าเรียนไปแต่ไม่ค่อยเข้าใจ",
+      "feeling_reflect": "หมดแรงและท้อ"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 1.5,
+      "summary": "ผู้เรียนมีภาวะหมดกำลังใจ",
+      "advanced": {
+        "primary_emotion": "Burned out",
+        "confidence_score": 0.15,
+        "struggle_point": "Overall comprehension",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["พักผ่อน", "กลับมาทบทวนใหม่อย่างค่อยเป็นค่อยไป"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เริ่มเข้าใจการทำงานของ middleware",
+      "feeling_reflect": "รู้สึกว่าระบบ backend ชัดเจนขึ้น"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.2,
+      "summary": "ผู้เรียนเริ่มเข้าใจโครงสร้างการไหลของ request",
+      "advanced": {
+        "primary_emotion": "Motivated",
+        "confidence_score": 0.78,
+        "struggle_point": "Middleware order",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ลองเขียน middleware เอง", "ทดสอบหลายกรณี"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจ async await มากขึ้นและใช้ได้ถูกต้อง",
+      "feeling_reflect": "รู้สึกโล่งและมั่นใจขึ้น"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 8.8,
+      "summary": "ผู้เรียนเข้าใจการทำงานแบบ asynchronous",
+      "advanced": {
+        "primary_emotion": "Relieved",
+        "confidence_score": 0.82,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ฝึกจัดการ error async", "อ่านโค้ดตัวอย่างเพิ่ม"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เริ่มออกแบบ database ได้เป็นระบบมากขึ้น",
+      "feeling_reflect": "รู้สึกภูมิใจในพัฒนาการของตัวเอง"
+    },
+    "answer": {
+      "sentiment": "Positive",
+      "reflection_score": 9.0,
+      "summary": "ผู้เรียนพัฒนาทักษะการออกแบบข้อมูลได้ดี",
+      "advanced": {
+        "primary_emotion": "Proud",
+        "confidence_score": 0.88,
+        "struggle_point": "None",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ลอง normalize schema", "ทบทวน indexing"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เข้าใจ flow ของ frontend กับ backend แต่ยังไม่คล่อง",
+      "feeling_reflect": "รู้สึกกลาง ๆ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 6.0,
+      "summary": "ผู้เรียนเข้าใจภาพรวมแต่ยังขาดความชำนาญ",
+      "advanced": {
+        "primary_emotion": "Unsure",
+        "confidence_score": 0.52,
+        "struggle_point": "System integration",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ทำโปรเจกต์เล็ก ๆ", "เชื่อม API ด้วยตนเอง"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "เรียนเรื่อง state management แต่ยังสับสน",
+      "feeling_reflect": "รู้สึกงงแต่ไม่ถึงกับเครียด"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 5.8,
+      "summary": "ผู้เรียนยังไม่เข้าใจการจัดการ state อย่างชัดเจน",
+      "advanced": {
+        "primary_emotion": "Confused",
+        "confidence_score": 0.48,
+        "struggle_point": "State flow",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["วาด diagram state", "ฝึกจากตัวอย่างง่าย"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ฟังเข้าใจแต่พอลงมือทำยังทำไม่ได้",
+      "feeling_reflect": "รู้สึกไม่มั่นใจ"
+    },
+    "answer": {
+      "sentiment": "Neutral",
+      "reflection_score": 5.2,
+      "summary": "ผู้เรียนยังขาดการฝึกปฏิบัติจริง",
+      "advanced": {
+        "primary_emotion": "Unsure",
+        "confidence_score": 0.45,
+        "struggle_point": "Hands-on skills",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ทำแบบฝึกหัดซ้ำ", "เริ่มจากโจทย์ง่าย"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "วันนี้เนื้อหาค่อนข้างเร็วตามไม่ทัน",
+      "feeling_reflect": "รู้สึกเหนื่อย"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 3.8,
+      "summary": "ผู้เรียนมีปัญหาการตามเนื้อหาที่เร็ว",
+      "advanced": {
+        "primary_emotion": "Tired",
+        "confidence_score": 0.35,
+        "struggle_point": "Learning pace",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดูวิดีย้อนหลัง", "ทบทวนบทเรียน"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "พยายามทำตามแต่ไม่เข้าใจ logic",
+      "feeling_reflect": "รู้สึกหงุดหงิด"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 3.0,
+      "summary": "ผู้เรียนติดปัญหาด้านการคิดเชิงตรรกะ",
+      "advanced": {
+        "primary_emotion": "Frustrated",
+        "confidence_score": 0.3,
+        "struggle_point": "Logic reasoning",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["แยกปัญหาเป็นขั้นตอน", "ฝึกโจทย์ logic"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "ไม่เข้าใจว่าทำไมต้องใช้โครงสร้างแบบนี้",
+      "feeling_reflect": "รู้สึกสับสนและท้อ"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.8,
+      "summary": "ผู้เรียนขาดความเข้าใจเชิงแนวคิด",
+      "advanced": {
+        "primary_emotion": "Confused",
+        "confidence_score": 0.28,
+        "struggle_point": "Conceptual understanding",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ดูภาพรวมก่อน", "ถามอาจารย์เพิ่มเติม"]
+      }
+    }
+  },
+  {
+    "question": {
+      "learning_reflect": "รู้สึกว่าตัวเองตามเพื่อนไม่ทัน",
+      "feeling_reflect": "เครียดและกังวล"
+    },
+    "answer": {
+      "sentiment": "Negative",
+      "reflection_score": 2.2,
+      "summary": "ผู้เรียนมีความกังวลด้านความสามารถของตนเอง",
+      "advanced": {
+        "primary_emotion": "Anxious",
+        "confidence_score": 0.22,
+        "struggle_point": "Self-confidence",
+        "consistency_check": "Match"
+      },
+      "development_plan": {
+        "next_steps": ["ทบทวนตามจังหวะตัวเอง", "ตั้งเป้าหมายเล็ก ๆ"]
+      }
+    }
   }
 ]

@@ -1,0 +1,28 @@
+meta {
+  name: reflection(GO)
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:5000/api/v1/reflections
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "learned": "today i learn python and how to use the library",
+    "feel_score": "8",
+    "reflect": "this is so fun and i want to make my knowledge epandation",
+    "progress_score": "7",
+    "challenge_score": "3",
+    "mood": "Fun",
+    "tree_node_id": "bbbb2222-cc33-dd44-ee55-ffffffffffff"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

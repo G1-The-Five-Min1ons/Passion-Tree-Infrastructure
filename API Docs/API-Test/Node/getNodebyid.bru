@@ -1,10 +1,10 @@
 meta {
-  name: delete-node
+  name: getNodebyid
   type: http
-  seq: 7
+  seq: 12
 }
 
-delete {
+get {
   url: http://localhost:5000/api/v1/learningpaths/nodes/:node_id
   body: none
   auth: inherit

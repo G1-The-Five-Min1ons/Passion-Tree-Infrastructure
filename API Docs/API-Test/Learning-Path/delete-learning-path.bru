@@ -1,13 +1,17 @@
 meta {
   name: delete-learning-path
   type: http
-  seq: 6
+  seq: 5
 }
 
 delete {
-  url: 
+  url: http://localhost:5000/api/v1/learningpaths/:path_id
   body: none
   auth: inherit
+}
+
+params:path {
+  path_id: 9a4da1e7-1e3d-4ac6-829a-d39212d1753f
 }
 
 settings {

@@ -1,0 +1,22 @@
+meta {
+  name: generate-path-with-ai
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/generate
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "topic": "เรียนรู้พื้นฐานความปลอดภัยทางไซเบอร์ (Cybersecurity) ภัยคุกคามรูปแบบต่างๆ เช่น Malware, Phishing, DDoS หลักการเข้ารหัสข้อมูล (Cryptography) และแนวทางการป้องกันระบบเครือข่ายองค์กร"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

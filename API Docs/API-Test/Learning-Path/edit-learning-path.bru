@@ -1,13 +1,23 @@
 meta {
   name: edit-learning-path
   type: http
-  seq: 5
+  seq: 4
 }
 
 put {
-  url: 
-  body: none
+  url: http://localhost:5000/api/v1/learningpaths/:path_id
+  body: json
   auth: inherit
+}
+
+params:path {
+  path_id: 17686cd4-82e8-4957-88ee-7abdf787d423
+}
+
+body:json {
+  {
+    "publish_status": "yo"
+  }
 }
 
 settings {

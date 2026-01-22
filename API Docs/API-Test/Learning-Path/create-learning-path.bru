@@ -1,13 +1,24 @@
 meta {
   name: create-learning-path
   type: http
-  seq: 4
+  seq: 3
 }
 
 post {
-  url: 
-  body: none
+  url: http://localhost:5000/api/v1/learningpaths
+  body: json
   auth: inherit
+}
+
+body:json {
+  {
+    "title": "Mastering Microservices with Go",
+    "objective": "เพื่อให้ผู้เรียนเข้าใจการออกแบบระบบ Microservices",
+    "description": "เจาะลึกการใช้ Go, gRPC, และ Docker ในการท าระบบขนาดใหญ่",
+    "cover_img_url": "https://storage.passiontree.com/covers/microservices-go.png",
+    "publish_status": "draft",
+    "creator_ID": "c88ef5c2-1176-48d7-8bce-dd4768669769"
+  }
 }
 
 settings {

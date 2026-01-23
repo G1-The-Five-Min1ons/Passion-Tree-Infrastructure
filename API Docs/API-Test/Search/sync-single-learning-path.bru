@@ -1,0 +1,20 @@
+meta {
+  name: sync-single-learning-path
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/sync/:path_id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  path_id: 20bd84e3-3b5d-4712-b374-061175543c0c
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

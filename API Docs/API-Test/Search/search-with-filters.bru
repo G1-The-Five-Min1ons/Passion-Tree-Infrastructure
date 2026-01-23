@@ -1,0 +1,26 @@
+meta {
+  name: search-with-filters
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/search
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "query": "machine learning",
+    "filters": {
+      "status": "published",
+      "category": "AI"
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -5,9 +5,13 @@ meta {
 }
 
 post {
-  url: 
+  url: http://localhost:5000/api/v1/learningpaths/nodes/:node_id/materials
   body: none
   auth: inherit
+}
+
+params:path {
+  node_id: 
 }
 
 settings {

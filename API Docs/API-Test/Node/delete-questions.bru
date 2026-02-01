@@ -5,9 +5,13 @@ meta {
 }
 
 delete {
-  url: 
+  url: http://localhost:5000/api/v1/learningpaths/questions/:question_id
   body: none
   auth: inherit
+}
+
+params:path {
+  question_id: 
 }
 
 settings {

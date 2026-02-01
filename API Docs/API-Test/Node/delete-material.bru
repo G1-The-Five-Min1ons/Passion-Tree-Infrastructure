@@ -5,9 +5,13 @@ meta {
 }
 
 delete {
-  url: 
+  url: http://localhost:5000/api/v1/learningpaths/nodes/materials/:material_id
   body: none
   auth: inherit
+}
+
+params:path {
+  material_id: 
 }
 
 settings {

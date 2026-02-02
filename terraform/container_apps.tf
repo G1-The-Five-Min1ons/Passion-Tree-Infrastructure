@@ -1,6 +1,6 @@
 # สร้างสภาพแวดล้อมสำหรับรัน Container ภายใน VNet
 resource "azurerm_container_app_environment" "aca_env" {
-  name                           = "project-environment"
+  name                           = "passion-tree-environment"
   location                       = azurerm_resource_group.project_rg.location
   resource_group_name            = azurerm_resource_group.project_rg.name
   log_analytics_workspace_id      = azurerm_log_analytics_workspace.logs.id

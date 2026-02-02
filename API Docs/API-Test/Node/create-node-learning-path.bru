@@ -5,9 +5,22 @@ meta {
 }
 
 post {
-  url: 
-  body: none
+  url: http://localhost:5000/api/v1/learningpaths/:path_id/nodes
+  body: json
   auth: inherit
+}
+
+params:path {
+  path_id: 
+}
+
+body:json {
+  {
+    "title": "asdasd",
+    "description": "asdasd",
+    "path_id": "a;sdl;",
+    "sequence": "1"
+  }
 }
 
 settings {

@@ -1,9 +1,13 @@
 #!/bin/bash
 
 # --- 1. Configuration ---
-RESOURCE_GROUP="Passion-Tree"
-SERVER_NAME="passion-tree-db-server"
-STORAGE_ACCOUNT_NAME="treeimage"
+RESOURCE_GROUP="passion-tree"
+SERVER_NAME="passion-tree"
+STORAGE_ACCOUNT_NAME="treeimages"
+SUBSCRIPTION_ID="739c1374-eb18-4fe9-b200-c7ed0140fa24"
+
+# Set subscription
+az account set --subscription "$SUBSCRIPTION_ID"
 
 # --- 2. Select Option ---
 echo "Select update option:"

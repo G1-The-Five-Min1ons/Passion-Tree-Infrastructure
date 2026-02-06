@@ -4,7 +4,7 @@ resource "azurerm_container_app_environment" "aca_env" {
   location                       = azurerm_resource_group.project_rg.location
   resource_group_name            = azurerm_resource_group.project_rg.name
   log_analytics_workspace_id      = azurerm_log_analytics_workspace.logs.id
-  infrastructure_subnet_id       = azurerm_subnet.aca_subnet.id # เชื่อมเข้า VNet
+  infrastructure_subnet_id       = azurerm_subnet.aca_subnet.id 
 }
 
 # 1. Go Backend (External Ingress - ประตูหน้าบ้าน)
@@ -23,7 +23,7 @@ resource "azurerm_container_app" "go_backend" {
 
       env {
         name  = "PORT"
-        value = "8080"
+        value = "5000"
       }
       env {
         name  = "DB_URL"
@@ -36,7 +36,7 @@ resource "azurerm_container_app" "go_backend" {
 
       readiness_probe {
         transport                 = "HTTP"
-        port                      = 8080
+        port                      = 5000
         path                      = "/health"
         interval_seconds          = 10
         timeout                   = 2
@@ -46,7 +46,7 @@ resource "azurerm_container_app" "go_backend" {
 
       liveness_probe {
         transport           = "HTTP"
-        port                = 8080
+        port                = 5000
         path                = "/health"
         initial_delay       = 5
         interval_seconds    = 10
@@ -58,7 +58,7 @@ resource "azurerm_container_app" "go_backend" {
 
   ingress {
     external_enabled = true # เปิดให้คนทั่วไปเข้าถึงได้
-    target_port      = 8080
+    target_port      = 5000
     traffic_weight {
       percentage      = 100
       latest_revision = true

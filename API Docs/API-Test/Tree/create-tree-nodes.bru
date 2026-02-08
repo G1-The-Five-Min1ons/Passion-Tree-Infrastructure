@@ -1,0 +1,24 @@
+meta {
+  name: create-tree-nodes
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:5000/api/v1/tree-nodes
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "node_title": "Node Tree Title",
+    "node_id": "bc0fd57e-e300-468d-9393-016c40c871e1", 
+    "tree_id": "b68492ba-e292-4f46-a51c-05c352e24708"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

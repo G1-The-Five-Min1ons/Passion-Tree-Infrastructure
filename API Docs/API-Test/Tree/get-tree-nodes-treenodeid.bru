@@ -1,0 +1,20 @@
+meta {
+  name: get-tree-nodes-treenodeid
+  type: http
+  seq: 12
+}
+
+get {
+  url: http://localhost:5000/api/v1/tree-nodes/:tree_node_id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  tree_node_id: 7aa26a97-d2b9-42fb-913a-00012ca7c364
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

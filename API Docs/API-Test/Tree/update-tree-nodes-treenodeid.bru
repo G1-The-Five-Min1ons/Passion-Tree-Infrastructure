@@ -1,0 +1,28 @@
+meta {
+  name: update-tree-nodes-treenodeid
+  type: http
+  seq: 13
+}
+
+put {
+  url: http://localhost:5000/api/v1/tree-nodes/:tree_node_id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  tree_node_id: 7aa26a97-d2b9-42fb-913a-00012ca7c364
+}
+
+body:json {
+  {
+  "node_title": "Updated Node Title",
+  "node_score": null,
+  "child_node": null
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

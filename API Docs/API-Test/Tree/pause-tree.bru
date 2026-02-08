@@ -1,0 +1,28 @@
+meta {
+  name: pause-tree
+  type: http
+  seq: 9
+}
+
+patch {
+  url: http://localhost:5000/api/v1/trees/:tree_id/pause
+  body: json
+  auth: inherit
+}
+
+params:path {
+  tree_id: 481F7F32-D340-488A-B668-2276FB2E1623
+}
+
+body:json {
+  {
+  "title": "Updated Tree Title",
+  "status": "active",
+  "is_pause": false
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,25 @@
+meta {
+  name: create-tree
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:5000/api/v1/trees
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+  "title": "My Learning Tree",
+  "difficulties": "Easy",
+  "path_id": "e384bd20-5d3b-1247-b374-061175543c0c",
+  "album_id": "6b97779d-05b4-9a41-a664-3303605a1282"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

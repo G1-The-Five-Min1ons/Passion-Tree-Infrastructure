@@ -1,0 +1,24 @@
+meta {
+  name: create-album
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/api/v1/albums
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "user_id": "c2f58ec8-7611-d748-8bce-dd4768669769",
+    "album_name": "Hello",
+    "cover_image_url": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

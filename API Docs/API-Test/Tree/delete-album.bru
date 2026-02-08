@@ -1,0 +1,20 @@
+meta {
+  name: delete-album
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:5000/api/v1/albums/:album_id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  album_id: af1e9f2c-c021-4d5a-99cf-292e5a0cabc8
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

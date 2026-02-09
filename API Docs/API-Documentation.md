@@ -1,7 +1,14 @@
-# 📖 Passion Tree — API Documentation
+# Passion Tree — API Documentation
 
 > Base URL (Backend): `http://localhost:5000`
 > Base URL (AI Service): `http://localhost:8000`
+
+### Services
+
+| Service | Port | Description |
+| ------- | ---- | ----------- |
+| **Go Backend** | `5000` | REST API หลัก (Authentication, Learning Path, Tree, etc.) |
+| **AI Service (Python/FastAPI)** | `8000` | AI-powered features (Search Embedding, Sentiment Analysis, etc.) |
 
 ---
 
@@ -23,6 +30,7 @@
 
 ### 1.1 GO Health Check
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/health`
 - **Method:** `GET`
 - **Description:** ตรวจสอบสถานะของ Backend Service (Go)
@@ -31,7 +39,8 @@
 
 ### 1.2 AI Service — Embed Text (Health Check)
 
-- **URL:** `http://localhost:8000/api/v1/search/embed`
+- **Service:** AI Service (`port 8000`)
+- **URL:** `/api/v1/search/embed`
 - **Method:** `POST`
 - **Description:** ตรวจสอบสถานะของ AI Service โดยทดสอบ embedding ข้อความ
 
@@ -49,6 +58,7 @@
 
 ### 2.1 Register
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/register`
 - **Method:** `POST`
 - **Description:** สมัครสมาชิกผู้ใช้ใหม่
@@ -70,6 +80,7 @@
 
 ### 2.2 Re-send Verification Mail
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/resend-verification`
 - **Method:** `POST`
 - **Description:** ส่งอีเมลยืนยันตัวตนอีกครั้ง
@@ -86,6 +97,7 @@
 
 ### 2.3 Verify Email Code
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/verify-email`
 - **Method:** `POST`
 - **Description:** ยืนยันอีเมลด้วยรหัส OTP
@@ -102,6 +114,7 @@
 
 ### 2.4 Login
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/login`
 - **Method:** `POST`
 - **Description:** เข้าสู่ระบบด้วย email/username และรหัสผ่าน
@@ -119,6 +132,7 @@
 
 ### 2.5 Forgot Password
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/forgot-password`
 - **Method:** `POST`
 - **Description:** ขอรีเซ็ตรหัสผ่าน (ระบบจะส่ง OTP ไปยังอีเมล)
@@ -135,6 +149,7 @@
 
 ### 2.6 Reset Password
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/reset-password`
 - **Method:** `POST`
 - **Description:** ตั้งรหัสผ่านใหม่โดยใช้ OTP ที่ได้รับจากอีเมล
@@ -153,6 +168,7 @@
 
 ### 2.7 Retrieve Profile
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/profile`
 - **Method:** `GET`
 - **Description:** ดึงข้อมูลโปรไฟล์ของผู้ใช้ที่เข้าสู่ระบบ
@@ -167,6 +183,7 @@
 
 ### 2.8 Update Profile
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/profile`
 - **Method:** `PUT`
 - **Description:** อัปเดตข้อมูลโปรไฟล์ผู้ใช้ (avatar, bio, location)
@@ -192,6 +209,7 @@
 
 ### 2.9 Update User
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/user`
 - **Method:** `PUT`
 - **Description:** อัปเดตข้อมูลพื้นฐานของผู้ใช้ (ชื่อ-นามสกุล)
@@ -216,6 +234,7 @@
 
 ### 2.10 Delete User
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/auth/user`
 - **Method:** `DELETE`
 - **Description:** ลบบัญชีผู้ใช้ (ต้องยืนยันด้วยรหัสผ่าน)
@@ -241,6 +260,7 @@
 
 ### 3.1 Generate Learning Path with AI
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/generate`
 - **Method:** `POST`
 - **Description:** สร้าง Learning Path อัตโนมัติจาก AI โดยระบุหัวข้อที่ต้องการเรียนรู้
@@ -259,6 +279,7 @@
 
 ### 4.1 Get All Learning Paths
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths`
 - **Method:** `GET`
 - **Description:** ดึงรายการ Learning Path ทั้งหมดของผู้ใช้
@@ -267,6 +288,7 @@
 
 ### 4.2 Get Learning Path Detail
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/:path_id`
 - **Method:** `GET`
 - **Description:** ดึงรายละเอียดของ Learning Path ตาม ID
@@ -281,6 +303,7 @@
 
 ### 4.3 Create Learning Path
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths`
 - **Method:** `POST`
 - **Description:** สร้าง Learning Path ใหม่
@@ -302,6 +325,7 @@
 
 ### 4.4 Edit Learning Path
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/:path_id`
 - **Method:** `PUT`
 - **Description:** แก้ไขข้อมูล Learning Path
@@ -324,6 +348,7 @@
 
 ### 4.5 Delete Learning Path
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/:path_id`
 - **Method:** `DELETE`
 - **Description:** ลบ Learning Path ตาม ID
@@ -340,6 +365,7 @@
 
 ### 5.1 Get All Node Questions
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/:node_id/questions`
 - **Method:** `GET`
 - **Description:** ดึงคำถามทั้งหมดภายใน Node
@@ -354,6 +380,7 @@
 
 ### 5.2 Create Node in Learning Path
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/:path_id/nodes`
 - **Method:** `POST`
 - **Description:** สร้าง Node ใหม่ภายใน Learning Path
@@ -379,6 +406,7 @@
 
 ### 5.3 Add Material to Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/:node_id/materials`
 - **Method:** `POST`
 - **Description:** เพิ่ม Material (เอกสารประกอบ) ให้กับ Node
@@ -393,6 +421,7 @@
 
 ### 5.4 Create Question in Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/:node_id/questions`
 - **Method:** `POST`
 - **Description:** สร้างคำถามใหม่ภายใน Node
@@ -407,6 +436,7 @@
 
 ### 5.5 Create Choice for Question
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/questions/:question_id/choices`
 - **Method:** `POST`
 - **Description:** สร้างตัวเลือก (Choice) สำหรับคำถาม
@@ -421,6 +451,7 @@
 
 ### 5.6 Edit Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/:node_id`
 - **Method:** `PUT`
 - **Description:** แก้ไขข้อมูล Node
@@ -435,6 +466,7 @@
 
 ### 5.7 Delete Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/:node_id`
 - **Method:** `DELETE`
 - **Description:** ลบ Node ออกจาก Learning Path
@@ -449,6 +481,7 @@
 
 ### 5.8 Delete Material
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/materials/:material_id`
 - **Method:** `DELETE`
 - **Description:** ลบ Material ออกจาก Node
@@ -463,6 +496,7 @@
 
 ### 5.9 Delete Question
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/questions/:question_id`
 - **Method:** `DELETE`
 - **Description:** ลบคำถามออกจาก Node
@@ -477,6 +511,7 @@
 
 ### 5.10 Delete Choice
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/questions/choices/:choice_id`
 - **Method:** `DELETE`
 - **Description:** ลบตัวเลือก (Choice) ออกจากคำถาม
@@ -491,6 +526,7 @@
 
 ### 5.11 Reorder Nodes
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/:path_id/nodes/reorder`
 - **Method:** `PUT`
 - **Description:** จัดเรียงลำดับ Node ใหม่ภายใน Learning Path
@@ -517,6 +553,7 @@
 
 ### 5.12 Get Node by ID
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/nodes/:node_id`
 - **Method:** `GET`
 - **Description:** ดึงข้อมูล Node ตาม ID
@@ -533,6 +570,7 @@
 
 ### 6.1 Get All Reflections
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/reflections`
 - **Method:** `GET`
 - **Description:** ดึง Reflection ทั้งหมดของผู้ใช้
@@ -541,6 +579,7 @@
 
 ### 6.2 Get Reflection by ID
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/reflections/:reflection_id`
 - **Method:** `GET`
 - **Description:** ดึง Reflection ตาม ID
@@ -555,7 +594,8 @@
 
 ### 6.3 Sentiment Analysis (AI Service)
 
-- **URL:** `http://localhost:8000/api/v1/sentiment/analyze`
+- **Service:** AI Service (`port 8000`)
+- **URL:** `/api/v1/sentiment/analyze`
 - **Method:** `POST`
 - **Description:** วิเคราะห์ความรู้สึก (Sentiment) จากข้อความที่ผู้ใช้เขียนเกี่ยวกับการเรียนรู้
 
@@ -572,6 +612,7 @@
 
 ### 6.4 Create Reflection
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/reflections`
 - **Method:** `POST`
 - **Description:** สร้าง Reflection ใหม่สำหรับบันทึกการเรียนรู้
@@ -596,7 +637,8 @@
 
 ### 7.1 Debug Collection Info (AI Service)
 
-- **URL:** `http://localhost:8000/api/v1/search/debug/collection/learning_paths`
+- **Service:** AI Service (`port 8000`)
+- **URL:** `/api/v1/search/debug/collection/learning_paths`
 - **Method:** `GET`
 - **Description:** ดึงข้อมูล Collection ของ Qdrant Vector Database สำหรับ Debug
 
@@ -604,6 +646,7 @@
 
 ### 7.2 Search Init
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/search/init`
 - **Method:** `POST`
 - **Description:** เริ่มต้น (Initialize) ระบบ Search
@@ -612,6 +655,7 @@
 
 ### 7.3 Search (No Filter)
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/search`
 - **Method:** `POST`
 - **Description:** ค้นหา Learning Path โดยไม่มีตัวกรอง
@@ -620,6 +664,7 @@
 
 ### 7.4 Search (With Filter)
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/search`
 - **Method:** `POST`
 - **Description:** ค้นหา Learning Path พร้อมตัวกรอง
@@ -636,6 +681,7 @@
 
 ### 7.5 Search Learning Path with Filters (GO)
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/search`
 - **Method:** `POST`
 - **Description:** ค้นหา Learning Path ผ่าน Go Backend พร้อม filter
@@ -656,6 +702,7 @@
 
 ### 7.6 Search Learning Path (GO)
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/search`
 - **Method:** `POST`
 - **Description:** ค้นหา Learning Path ผ่าน Go Backend
@@ -664,6 +711,7 @@
 
 ### 7.7 Sync Single Learning Path
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/learningpaths/sync/:path_id`
 - **Method:** `POST`
 - **Description:** Sync ข้อมูล Learning Path เดียวเข้า Vector Database
@@ -678,7 +726,8 @@
 
 ### 7.8 Delete from Qdrant (AI Service)
 
-- **URL:** `http://localhost:8000/api/v1/search/sync/:id`
+- **Service:** AI Service (`port 8000`)
+- **URL:** `/api/v1/search/sync/:id`
 - **Method:** `DELETE`
 - **Description:** ลบข้อมูลออกจาก Qdrant Vector Database
 
@@ -694,6 +743,7 @@
 
 ### 8.1 Create Tree
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/trees`
 - **Method:** `POST`
 - **Description:** สร้าง Tree ใหม่สำหรับติดตามความก้าวหน้าของ Learning Path
@@ -713,6 +763,7 @@
 
 ### 8.2 Update Tree
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/trees/:tree_id`
 - **Method:** `PUT`
 - **Description:** อัปเดตข้อมูล Tree
@@ -737,6 +788,7 @@
 
 ### 8.3 Get Tree
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/trees/:tree_id`
 - **Method:** `GET`
 - **Description:** ดึงข้อมูล Tree ตาม ID
@@ -751,6 +803,7 @@
 
 ### 8.4 Get Trees by Album
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/trees`
 - **Method:** `GET`
 - **Description:** ดึง Tree ทั้งหมดภายใน Album
@@ -765,6 +818,7 @@
 
 ### 8.5 Pause Tree
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/trees/:tree_id/pause`
 - **Method:** `PATCH`
 - **Description:** หยุด/เริ่มต้น Tree ชั่วคราว (Pause/Resume)
@@ -789,6 +843,7 @@
 
 ### 8.6 Create Tree Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/tree-nodes`
 - **Method:** `POST`
 - **Description:** สร้าง Tree Node ใหม่ (เชื่อมโยง Node จาก Learning Path กับ Tree)
@@ -807,6 +862,7 @@
 
 ### 8.7 Get Tree Nodes by Tree ID
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/tree-nodes`
 - **Method:** `GET`
 - **Description:** ดึง Tree Node ทั้งหมดตาม Tree ID
@@ -821,6 +877,7 @@
 
 ### 8.8 Get Tree Node by Tree Node ID
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/tree-nodes/:tree_node_id`
 - **Method:** `GET`
 - **Description:** ดึงข้อมูล Tree Node ตาม Tree Node ID
@@ -835,6 +892,7 @@
 
 ### 8.9 Update Tree Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/tree-nodes/:tree_node_id`
 - **Method:** `PUT`
 - **Description:** อัปเดตข้อมูล Tree Node
@@ -859,6 +917,7 @@
 
 ### 8.10 Delete Tree Node
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/tree-nodes/:tree_node_id`
 - **Method:** `DELETE`
 - **Description:** ลบ Tree Node
@@ -875,6 +934,7 @@
 
 ### 9.1 Create Album
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/albums`
 - **Method:** `POST`
 - **Description:** สร้าง Album ใหม่สำหรับจัดกลุ่ม Tree
@@ -893,6 +953,7 @@
 
 ### 9.2 Get Albums
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/albums`
 - **Method:** `GET`
 - **Description:** ดึง Album ทั้งหมดของผู้ใช้
@@ -907,6 +968,7 @@
 
 ### 9.3 Delete Album
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/albums/:album_id`
 - **Method:** `DELETE`
 - **Description:** ลบ Album
@@ -921,6 +983,7 @@
 
 ### 9.4 Update Album
 
+- **Service:** Go Backend (`port 5000`)
 - **URL:** `/api/v1/albums/:album_id`
 - **Method:** `PUT`
 - **Description:** อัปเดตข้อมูล Album

@@ -15,7 +15,7 @@ terraform {
 
 provider "azurerm" {
   features {}
-  skip_provider_registration = true # subscription ของมหาลัยไม่มีสิทธิ์ register providers
+  resource_provider_registrations = "none" # subscription ของมหาลัยไม่มีสิทธิ์ register providers
 }
 
 # Authentication ผ่าน env var CLOUDFLARE_API_TOKEN

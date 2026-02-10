@@ -2,7 +2,7 @@
 resource "cloudflare_record" "mx_route_1" {
   zone_id  = var.cloudflare_zone_id 
   name     = "@"
-  value    = "route1.mx.cloudflare.net"
+  content  = "route1.mx.cloudflare.net"
   type     = "MX"
   priority = 50
 }
@@ -10,7 +10,7 @@ resource "cloudflare_record" "mx_route_1" {
 resource "cloudflare_record" "mx_route_2" {
   zone_id  = var.cloudflare_zone_id
   name     = "@"
-  value    = "route2.mx.cloudflare.net"
+  content  = "route2.mx.cloudflare.net"
   type     = "MX"
   priority = 82
 }
@@ -18,7 +18,7 @@ resource "cloudflare_record" "mx_route_2" {
 resource "cloudflare_record" "mx_route_3" {
   zone_id  = var.cloudflare_zone_id
   name     = "@"
-  value    = "route3.mx.cloudflare.net"
+  content  = "route3.mx.cloudflare.net"
   type     = "MX"
   priority = 5
 }

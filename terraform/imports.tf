@@ -5,10 +5,10 @@
 
 import {
   to = cloudflare_record.backend_cname
-  id = "32186c2ab01024cb51b567d0a93cb056/a62c4d6c74508f5532b99a898b05483a"
+  id = "${var.cloudflare_zone_id}/a62c4d6c74508f5532b99a898b05483a"
 }
 
 import {
   to = cloudflare_record.domain_verification
-  id = "32186c2ab01024cb51b567d0a93cb056/73c6e9662834d08a1f52ab7423ef106b"
+  id = "${var.cloudflare_zone_id}/73c6e9662834d08a1f52ab7423ef106b"
 }

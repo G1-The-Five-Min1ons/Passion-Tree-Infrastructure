@@ -35,8 +35,9 @@ resource "azurerm_log_analytics_workspace" "logs" {
 }
 
 output "domain_verification_id" {
-  value = azurerm_container_app.go_backend.custom_domain_verification_id
+  value       = azurerm_container_app.go_backend.custom_domain_verification_id
   description = "Bring this value and put it in the TXT record at Cloudflare (Name: asuid)"
+  sensitive   = true
 }
 
 output "aca_fqdn" {

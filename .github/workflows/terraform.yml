@@ -22,10 +22,60 @@ env:
   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
 jobs:
+  # Step 0: สร้าง Storage Account สำหรับ Terraform State (ถ้ายังไม่มี)
+  setup-backend:
+    name: Setup Terraform Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Create Storage Account for TF State (if not exists)
+        run: |
+          # สร้าง Storage Account (ถ้ายังไม่มี)
+          if ! az storage account show --name passiontreestate --resource-group Passion-Tree &>/dev/null; then
+            echo "Creating storage account for Terraform state..."
+            az storage account create \
+              --name passiontreestate \
+              --resource-group Passion-Tree \
+              --location southeastasia \
+              --sku Standard_LRS \
+              --min-tls-version TLS1_2
+          fi
+
+          # สร้าง Blob Container (ถ้ายังไม่มี)
+          if ! az storage container show --name tfstate --account-name passiontreestate &>/dev/null; then
+            echo "Creating blob container for state file..."
+            az storage container create \
+              --name tfstate \
+              --account-name passiontreestate
+          fi
+
+      - name: Cleanup stale resources (if location mismatch)
+        run: |
+          # ลบ resource เก่าที่ชื่อซ้ำแต่อยู่ผิด region (ป้องกัน name conflict)
+          EXPECTED_LOCATION="eastasia"
+          RESOURCES=("passiontree-vnet" "aca-nsg" "passion-tree-aca-identity" "passiontree-log-workspace")
+          for name in "${RESOURCES[@]}"; do
+            RESOURCE_ID=$(az resource list --resource-group Passion-Tree --name "$name" --query "[0].id" -o tsv 2>/dev/null)
+            if [ -n "$RESOURCE_ID" ]; then
+              CURRENT_LOCATION=$(az resource show --ids "$RESOURCE_ID" --query "location" -o tsv 2>/dev/null)
+              if [ "$CURRENT_LOCATION" != "$EXPECTED_LOCATION" ]; then
+                echo "Deleting stale resource: $name (location: $CURRENT_LOCATION, expected: $EXPECTED_LOCATION)"
+                az resource delete --ids "$RESOURCE_ID" --no-wait || true
+              fi
+            fi
+          done
+
   # Step 1: Plan — รันทุก push & PR
   terraform-plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
+    needs: setup-backend
     defaults:
       run:
         working-directory: ${{ env.TF_WORKING_DIR }}

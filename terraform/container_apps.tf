@@ -81,18 +81,19 @@ resource "azurerm_container_app" "go_backend" {
   }
 }
 
-# ผูกโดเมน passion-tree.org เข้ากับ Backend
-# หมายเหตุ: ต้อง apply DNS records (CNAME + TXT) ก่อน แล้วค่อย uncomment certificate binding
+# ─── Custom Domain ───
+# รอ DNS propagate ก่อน bind domain (Azure ต้องเจอ TXT record ก่อน)
+resource "time_sleep" "wait_for_dns" {
+  depends_on      = [cloudflare_record.domain_verification, cloudflare_record.backend_cname]
+  create_duration = "180s" # รอ 3 นาทีให้ DNS propagate
+}
+
 resource "azurerm_container_app_custom_domain" "backend_domain" {
   name             = "passion-tree.org"
   container_app_id = azurerm_container_app.go_backend.id
+  depends_on       = [time_sleep.wait_for_dns]
 
-  # ─── TLS Managed Certificate ───
-  # ขั้นตอน:
-  #   1. ครั้งแรก: terraform apply เพื่อสร้าง DNS records + custom domain (comment certificate ไว้ก่อน)
-  #   2. รอ DNS propagate (~1-5 นาที)
-  #   3. Uncomment 2 บรรทัดข้างล่าง แล้ว terraform apply อีกครั้ง
-  #
+  # TLS Managed Certificate (uncomment หลัง custom domain สร้างสำเร็จครั้งแรก):
   # container_app_environment_certificate_id = azurerm_container_app_environment_certificate.managed_cert.id
   # certificate_binding_type                 = "SniEnabled"
 }

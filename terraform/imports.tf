@@ -42,3 +42,13 @@ import {
   to = azurerm_subnet.appgw_subnet
   id = "/subscriptions/37a4a9ac-d61a-48ce-a165-92e989e945f3/resourceGroups/Passion-Tree/providers/Microsoft.Network/virtualNetworks/passiontree-vnet/subnets/appgw-subnet"
 }
+
+import {
+  to = azurerm_container_app_environment.aca_env
+  id = "/subscriptions/37a4a9ac-d61a-48ce-a165-92e989e945f3/resourceGroups/Passion-Tree/providers/Microsoft.App/managedEnvironments/passion-tree-environment"
+}
+
+import {
+  to = azurerm_subnet_network_security_group_association.aca_nsg_assoc
+  id = "/subscriptions/37a4a9ac-d61a-48ce-a165-92e989e945f3/resourceGroups/Passion-Tree/providers/Microsoft.Network/virtualNetworks/passiontree-vnet/subnets/aca-infrastructure-subnet"
+}

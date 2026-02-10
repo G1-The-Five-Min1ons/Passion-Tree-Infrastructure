@@ -52,6 +52,192 @@ resource "azurerm_container_app" "go_backend" {
       memory = "1Gi"
 
       # env vars จัดการโดย CI/CD ของ Backend repo
+      env {
+        name  = "DB_HOST"
+        value = var.db_server
+      }
+      env {
+        name  = "DB_NAME"
+        value = var.db_database
+      }
+      env {
+        name  = "DB_USER"
+        value = var.db_user
+      }
+      env {
+        name  = "DB_PASSWORD"
+        value = var.db_password
+      }
+      env {
+        name  = "DB_PORT"
+        value = var.db_port
+      }
+      # SMTP / MailerSend
+      env {
+        name  = "MAILERSEND_API_KEY"
+        value = var.mailersend_api_key
+      }
+      env {
+        name  = "SMTP_HOST"
+        value = var.smtp_host
+      }
+      env {
+        name  = "SMTP_PORT"
+        value = var.smtp_port
+      }
+      env {
+        name  = "SMTP_USERNAME"
+        value = var.smtp_username
+      }
+      env {
+        name  = "SMTP_PASSWORD"
+        value = var.smtp_password
+      }
+      env {
+        name  = "SMTP_FROM_EMAIL"
+        value = var.smtp_from_email
+      }
+      # Azure Storage
+      env {
+        name  = "AZURE_STORAGE_ACCOUNT_NAME"
+        value = var.azure_storage_account_name
+      }
+      env {
+        name  = "AZURE_STORAGE_ACCOUNT_KEY"
+        value = var.azure_storage_account_key
+      }
+      env {
+        name  = "AZURE_STORAGE_CONNECTION_STRING"
+        value = var.azure_storage_connection_string
+      }
+      env {
+        name  = "CONTAINER_LEARNING_PATH"
+        value = var.container_learning_path
+      }
+      env {
+        name  = "CONTAINER_PROFILE"
+        value = var.container_profile
+      }
+      # Service Config
+      env {
+        name = "APP_ENV"
+        value = "production"
+      }
+      env {
+         name = "APP_URL"
+         value = "https://passion-tree.org"
+      }
+      # SMTP / MailerSend
+      env {
+        name  = "MAILERSEND_API_KEY"
+        value = var.mailersend_api_key
+      }
+      env {
+        name  = "SMTP_HOST"
+        value = var.smtp_host
+      }
+      env {
+        name  = "SMTP_PORT"
+        value = var.smtp_port
+      }
+      env {
+        name  = "SMTP_USERNAME"
+        value = var.smtp_username
+      }
+      env {
+        name  = "SMTP_PASSWORD"
+        value = var.smtp_password
+      }
+      env {
+        name  = "SMTP_FROM_EMAIL"
+        value = var.smtp_from_email
+      }
+      # Azure Storage
+      env {
+        name  = "AZURE_STORAGE_ACCOUNT_NAME"
+        value = var.azure_storage_account_name
+      }
+      env {
+        name  = "AZURE_STORAGE_ACCOUNT_KEY"
+        value = var.azure_storage_account_key
+      }
+      env {
+        name  = "AZURE_STORAGE_CONNECTION_STRING"
+        value = var.azure_storage_connection_string
+      }
+      env {
+        name  = "CONTAINER_LEARNING_PATH"
+        value = var.container_learning_path
+      }
+      env {
+        name  = "CONTAINER_PROFILE"
+        value = var.container_profile
+      }
+      # Service Config
+      env {
+        name = "APP_ENV"
+        value = "production"
+      }
+      env {
+         name = "APP_URL"
+         value = "https://passion-tree.org"
+      }
+      # SMTP / MailerSend
+      env {
+        name  = "MAILERSEND_API_KEY"
+        value = var.mailersend_api_key
+      }
+      env {
+        name  = "SMTP_HOST"
+        value = var.smtp_host
+      }
+      env {
+        name  = "SMTP_PORT"
+        value = var.smtp_port
+      }
+      env {
+        name  = "SMTP_USERNAME"
+        value = var.smtp_username
+      }
+      env {
+        name  = "SMTP_PASSWORD"
+        value = var.smtp_password
+      }
+      env {
+        name  = "SMTP_FROM_EMAIL"
+        value = var.smtp_from_email
+      }
+      # Azure Storage
+      env {
+        name  = "AZURE_STORAGE_ACCOUNT_NAME"
+        value = var.azure_storage_account_name
+      }
+      env {
+        name  = "AZURE_STORAGE_ACCOUNT_KEY"
+        value = var.azure_storage_account_key
+      }
+      env {
+        name  = "AZURE_STORAGE_CONNECTION_STRING"
+        value = var.azure_storage_connection_string
+      }
+      env {
+        name  = "CONTAINER_LEARNING_PATH"
+        value = var.container_learning_path
+      }
+      env {
+        name  = "CONTAINER_PROFILE"
+        value = var.container_profile
+      }
+      # Service Config
+      env {
+        name = "APP_ENV"
+        value = "production"
+      }
+      env {
+         name = "APP_URL"
+         value = "https://passion-tree.org"
+      }
+
 
       readiness_probe {
         transport = "HTTP"
@@ -123,6 +309,47 @@ resource "azurerm_container_app" "ai_service" {
       memory = "1Gi"
 
       # env vars & secrets จัดการโดย CI/CD ของ AI repo
+      env {
+        name  = "GROQ_API_KEY"
+        value = var.groq_api_key
+      }
+      env {
+        name  = "JINA_API_KEY"
+        value = var.jina_api_key
+      }
+      env {
+        name  = "HF_TOKEN"
+        value = var.hf_token
+      }
+      env {
+        name  = "QDRANT_URL"
+        value = var.qdrant_url
+      }
+      env {
+        name  = "QDRANT_API_KEY"
+        value = var.qdrant_api_key
+      }
+
+      env {
+        name  = "GROQ_API_KEY"
+        value = var.groq_api_key
+      }
+      env {
+        name  = "JINA_API_KEY"
+        value = var.jina_api_key
+      }
+      env {
+        name  = "HF_TOKEN"
+        value = var.hf_token
+      }
+      env {
+        name  = "QDRANT_URL"
+        value = var.qdrant_url
+      }
+      env {
+        name  = "QDRANT_API_KEY"
+        value = var.qdrant_api_key
+      }
 
       readiness_probe {
         transport = "HTTP"

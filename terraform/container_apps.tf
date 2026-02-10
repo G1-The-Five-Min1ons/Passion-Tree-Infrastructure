@@ -5,9 +5,15 @@ resource "azurerm_user_assigned_identity" "aca_identity" {
   location            = data.azurerm_resource_group.passion_tree.location 
 }
 
+# ดึงข้อมูล ACR ที่มีอยู่แล้ว (แทนการ hardcode subscription ID)
+data "azurerm_container_registry" "acr" {
+  name                = "PassionTreeContainerRegistry"
+  resource_group_name = data.azurerm_resource_group.passion_tree.name
+}
+
 # มอบสิทธิ์ (Role Assignment)
 resource "azurerm_role_assignment" "acr_pull" {
-  scope                = "/subscriptions/37a4a9ac-d61a-48ce-a165-92e989e945f3/resourceGroups/Passion-Tree/providers/Microsoft.ContainerRegistry/registries/PassionTreeContainerRegistry"
+  scope                = data.azurerm_container_registry.acr.id
   role_definition_name = "AcrPull"
   principal_id         = azurerm_user_assigned_identity.aca_identity.principal_id
 }
@@ -15,8 +21,8 @@ resource "azurerm_role_assignment" "acr_pull" {
 # สภาพแวดล้อมสำหรับรัน Container (VNet-Injected)
 resource "azurerm_container_app_environment" "aca_env" {
   name                       = "passion-tree-environment"
-  location                   = azurerm_resource_group.passion_tree.location
-  resource_group_name        = azurerm_resource_group.passion_tree.name
+  location                   = data.azurerm_resource_group.passion_tree.location
+  resource_group_name        = data.azurerm_resource_group.passion_tree.name
   log_analytics_workspace_id  = azurerm_log_analytics_workspace.logs.id
   infrastructure_subnet_id   = azurerm_subnet.aca_subnet.id
 }
@@ -25,7 +31,7 @@ resource "azurerm_container_app_environment" "aca_env" {
 resource "azurerm_container_app" "go_backend" {
   name                         = "backend-go"
   container_app_environment_id = azurerm_container_app_environment.aca_env.id
-  resource_group_name          = azurerm_resource_group.passion_tree.name
+  resource_group_name          = data.azurerm_resource_group.passion_tree.name
   revision_mode                = "Single"
 
   identity {
@@ -45,9 +51,7 @@ resource "azurerm_container_app" "go_backend" {
       cpu    = 0.5
       memory = "1Gi"
 
-      env { name = "PORT"; value = "5000" }
-      env { name = "DB_URL"; value = var.backend_db_url }
-      env { name = "AI_SERVICE_URL"; value = "http://passion-tree-ai-service" } # คุยภายในผ่านชื่อแอป
+      # env vars จัดการโดย CI/CD ของ Backend repo
 
       readiness_probe {
         transport = "HTTP"
@@ -68,19 +72,36 @@ resource "azurerm_container_app" "go_backend" {
       latest_revision = true
     }
   }
+
+  # ป้องกัน Terraform revert image ที่ CI/CD deploy ไปแล้ว
+  lifecycle {
+    ignore_changes = [
+      template[0].container[0].image,
+    ]
+  }
 }
 
-# ผูกโดเมน the-passiontree.org เข้ากับ Backend
+# ผูกโดเมน passion-tree.org เข้ากับ Backend
+# หมายเหตุ: ต้อง apply DNS records (CNAME + TXT) ก่อน แล้วค่อย uncomment certificate binding
 resource "azurerm_container_app_custom_domain" "backend_domain" {
-  name             = "the-passiontree.org"
+  name             = "passion-tree.org"
   container_app_id = azurerm_container_app.go_backend.id
+
+  # ─── TLS Managed Certificate ───
+  # ขั้นตอน:
+  #   1. ครั้งแรก: terraform apply เพื่อสร้าง DNS records + custom domain (comment certificate ไว้ก่อน)
+  #   2. รอ DNS propagate (~1-5 นาที)
+  #   3. Uncomment 2 บรรทัดข้างล่าง แล้ว terraform apply อีกครั้ง
+  #
+  # container_app_environment_certificate_id = azurerm_container_app_environment_certificate.managed_cert.id
+  # certificate_binding_type                 = "SniEnabled"
 }
 
 # FastAPI AI Service (Internal Ingress)
 resource "azurerm_container_app" "ai_service" {
   name                         = "passion-tree-ai-service"
   container_app_environment_id = azurerm_container_app_environment.aca_env.id
-  resource_group_name          = azurerm_resource_group.passion_tree.name
+  resource_group_name          = data.azurerm_resource_group.passion_tree.name
   revision_mode                = "Single"
 
   identity {
@@ -93,11 +114,6 @@ resource "azurerm_container_app" "ai_service" {
     identity = azurerm_user_assigned_identity.aca_identity.id
   }
 
-  secret {
-    name  = "groq-api-key"
-    value = var.groq_api_key
-  }
-
   template {
     container {
       name   = "fastapi-app"
@@ -105,9 +121,7 @@ resource "azurerm_container_app" "ai_service" {
       cpu    = 0.5
       memory = "1Gi"
 
-      env { name = "PORT"; value = "8000" }
-      env { name = "REDIS_URL"; value = var.redis_url }
-      env { name = "GROQ_API_KEY"; secret_name = "groq_api_key" }
+      # env vars & secrets จัดการโดย CI/CD ของ AI repo
 
       readiness_probe {
         transport = "HTTP"
@@ -126,5 +140,11 @@ resource "azurerm_container_app" "ai_service" {
       percentage      = 100
       latest_revision = true
     }
+  }
+
+  lifecycle {
+    ignore_changes = [
+      template[0].container[0].image,
+    ]
   }
 }

@@ -12,6 +12,9 @@ terraform/*.tfstate
 terraform/*.tfstate.backup
 terraform/.terraform.lock.hcl
 
+# Terraform variable values (มี secret ห้ามขึ้น Git)
+terraform/*.tfvars
+
 # IDE
 .vscode/
 .idea/

@@ -2,14 +2,14 @@
 resource "azurerm_virtual_network" "main_vnet" {
   name                = "passiontree-vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.project_rg.location
-  resource_group_name = azurerm_resource_group.project_rg.name
+  location            = data.azurerm_resource_group.passion_tree.location
+  resource_group_name = data.azurerm_resource_group.passion_tree.name
 }
 
 # 2. Subnet สำหรับ Azure Container Apps (ต้องทำ Delegation)
 resource "azurerm_subnet" "aca_subnet" {
   name                 = "aca-infrastructure-subnet"
-  resource_group_name  = azurerm_resource_group.project_rg.name
+  resource_group_name  = data.azurerm_resource_group.passion_tree.name
   virtual_network_name = azurerm_virtual_network.main_vnet.name
   address_prefixes     = ["10.0.0.0/23"] # ขนาด /23 ตามมาตรฐาน Azure สำหรับ ACA
 
@@ -26,7 +26,7 @@ resource "azurerm_subnet" "aca_subnet" {
 # 3. Subnet สำหรับ Database (Private Zone)
 resource "azurerm_subnet" "db_subnet" {
   name                 = "private-db-subnet"
-  resource_group_name  = azurerm_resource_group.project_rg.name
+  resource_group_name  = data.azurerm_resource_group.passion_tree.name
   virtual_network_name = azurerm_virtual_network.main_vnet.name
   address_prefixes     = ["10.0.2.0/24"]
 }
@@ -34,7 +34,7 @@ resource "azurerm_subnet" "db_subnet" {
 # 4. Subnet สำหรับ Application Gateway (ถ้าจะทำ Load Balancer ชั้นนอก)
 resource "azurerm_subnet" "appgw_subnet" {
   name                 = "appgw-subnet"
-  resource_group_name  = azurerm_resource_group.project_rg.name
+  resource_group_name  = data.azurerm_resource_group.passion_tree.name
   virtual_network_name = azurerm_virtual_network.main_vnet.name
   address_prefixes     = ["10.0.3.0/24"]
 }
@@ -42,8 +42,8 @@ resource "azurerm_subnet" "appgw_subnet" {
 # 5. Network Security Group (NSG) เพื่อควบคุมความปลอดภัย
 resource "azurerm_network_security_group" "aca_nsg" {
   name                = "aca-nsg"
-  location            = azurerm_resource_group.project_rg.location
-  resource_group_name = azurerm_resource_group.project_rg.name
+  location            = data.azurerm_resource_group.passion_tree.location
+  resource_group_name = data.azurerm_resource_group.passion_tree.name
 
   security_rule {
     name                       = "AllowHTTPS"

@@ -15,6 +15,13 @@ variable "ai_image" {
   type        = string
 }
 
+# ── Location ──
+variable "aca_location" {
+  description = "Azure region for Container Apps and networking (subscription quota may block some regions)"
+  type        = string
+  default     = "eastasia"
+}
+
 # ── Cloudflare ──
 variable "cloudflare_zone_id" {
   description = "Zone ID of the domain in Cloudflare"

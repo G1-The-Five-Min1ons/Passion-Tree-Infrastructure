@@ -29,7 +29,7 @@ data "azurerm_resource_group" "passion_tree" {
 # สร้างพื้นที่เก็บ Log สำหรับ Container Apps
 resource "azurerm_log_analytics_workspace" "logs" {
   name                = "passiontree-log-workspace"
-  location            = data.azurerm_resource_group.passion_tree.location
+  location            = var.aca_location
   resource_group_name = data.azurerm_resource_group.passion_tree.name
   sku                 = "PerGB2018"
 }

@@ -2,7 +2,7 @@
 resource "azurerm_virtual_network" "main_vnet" {
   name                = "passiontree-vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = data.azurerm_resource_group.passion_tree.location
+  location            = var.aca_location
   resource_group_name = data.azurerm_resource_group.passion_tree.name
 }
 
@@ -42,7 +42,7 @@ resource "azurerm_subnet" "appgw_subnet" {
 # 5. Network Security Group (NSG) เพื่อควบคุมความปลอดภัย
 resource "azurerm_network_security_group" "aca_nsg" {
   name                = "aca-nsg"
-  location            = data.azurerm_resource_group.passion_tree.location
+  location            = var.aca_location
   resource_group_name = data.azurerm_resource_group.passion_tree.name
 
   security_rule {

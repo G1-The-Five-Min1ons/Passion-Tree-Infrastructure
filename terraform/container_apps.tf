@@ -2,7 +2,7 @@
 resource "azurerm_user_assigned_identity" "aca_identity" {
   name                = "passion-tree-aca-identity"
   resource_group_name = data.azurerm_resource_group.passion_tree.name 
-  location            = data.azurerm_resource_group.passion_tree.location 
+  location            = var.aca_location 
 }
 
 # ดึงข้อมูล ACR ที่มีอยู่แล้ว (แทนการ hardcode subscription ID)
@@ -21,7 +21,7 @@ resource "azurerm_role_assignment" "acr_pull" {
 # สภาพแวดล้อมสำหรับรัน Container (VNet-Injected)
 resource "azurerm_container_app_environment" "aca_env" {
   name                       = "passion-tree-environment"
-  location                   = data.azurerm_resource_group.passion_tree.location
+  location                   = var.aca_location
   resource_group_name        = data.azurerm_resource_group.passion_tree.name
   log_analytics_workspace_id  = azurerm_log_analytics_workspace.logs.id
   infrastructure_subnet_id   = azurerm_subnet.aca_subnet.id

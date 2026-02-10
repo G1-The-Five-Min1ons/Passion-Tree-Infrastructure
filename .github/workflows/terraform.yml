@@ -57,19 +57,54 @@ jobs:
 
       - name: Cleanup stale resources (if location mismatch)
         run: |
-          # ลบ resource เก่าที่ชื่อซ้ำแต่อยู่ผิด region (ป้องกัน name conflict)
+          # ลบ resource เก่าที่อยู่ผิด region (ป้องกัน name conflict + location mismatch)
           EXPECTED_LOCATION="eastasia"
-          RESOURCES=("passiontree-vnet" "aca-nsg" "passion-tree-aca-identity" "passiontree-log-workspace")
-          for name in "${RESOURCES[@]}"; do
-            RESOURCE_ID=$(az resource list --resource-group Passion-Tree --name "$name" --query "[0].id" -o tsv 2>/dev/null)
-            if [ -n "$RESOURCE_ID" ]; then
-              CURRENT_LOCATION=$(az resource show --ids "$RESOURCE_ID" --query "location" -o tsv 2>/dev/null)
-              if [ "$CURRENT_LOCATION" != "$EXPECTED_LOCATION" ]; then
-                echo "Deleting stale resource: $name (location: $CURRENT_LOCATION, expected: $EXPECTED_LOCATION)"
-                az resource delete --ids "$RESOURCE_ID" --no-wait || true
-              fi
+          RG="Passion-Tree"
+
+          # ตรวจสอบว่ามี ACA Environment อยู่ผิด region หรือไม่
+          ENV_ID=$(az resource list -g $RG --resource-type "Microsoft.App/managedEnvironments" --name "passion-tree-environment" --query "[0].id" -o tsv 2>/dev/null)
+          if [ -n "$ENV_ID" ]; then
+            ENV_LOCATION=$(az resource show --ids "$ENV_ID" --query "location" -o tsv 2>/dev/null)
+            if [ "$ENV_LOCATION" != "$EXPECTED_LOCATION" ]; then
+              echo "ACA Environment is in $ENV_LOCATION, expected $EXPECTED_LOCATION. Cleaning up..."
+
+              # ลำดับสำคัญ: ลบ Container Apps ก่อน → Environment → VNet/NSG
+              echo "Step 1: Deleting Container Apps..."
+              az containerapp delete --name backend-go -g $RG --yes 2>/dev/null || true
+              az containerapp delete --name passion-tree-ai-service -g $RG --yes 2>/dev/null || true
+
+              echo "Step 2: Waiting for apps to be deleted..."
+              sleep 30
+
+              echo "Step 3: Deleting ACA Environment..."
+              az containerapp env delete --name passion-tree-environment -g $RG --yes 2>/dev/null || true
+              sleep 30
+
+              echo "Step 4: Deleting remaining resources..."
+              for name in "aca-nsg" "passiontree-vnet" "passion-tree-aca-identity" "passiontree-log-workspace"; do
+                RES_ID=$(az resource list -g $RG --name "$name" --query "[0].id" -o tsv 2>/dev/null)
+                if [ -n "$RES_ID" ]; then
+                  echo "  Deleting: $name"
+                  az resource delete --ids "$RES_ID" 2>/dev/null || true
+                fi
+              done
+
+              echo "Cleanup complete."
+
+              # ลบ Terraform state เก่า เพราะ resource ที่อ้างอิงถูกลบแล้ว
+              echo "Step 5: Clearing Terraform remote state..."
+              az storage blob delete \
+                --container-name tfstate \
+                --name terraform.tfstate \
+                --account-name passiontreestate \
+                --auth-mode login 2>/dev/null || true
+              echo "State cleared. Terraform will create fresh resources."
+            else
+              echo "ACA Environment already in $EXPECTED_LOCATION, no cleanup needed."
             fi
-          done
+          else
+            echo "No ACA Environment found, skipping cleanup."
+          fi
 
   # Step 1: Plan — รันทุก push & PR
   terraform-plan:

@@ -56,7 +56,7 @@ resource "azurerm_container_app" "go_backend" {
       readiness_probe {
         transport = "HTTP"
         port      = 5000
-        path      = "/health"
+        path      = "/api/v1/health"
       }
     }
     # ตั้งค่าการขยายตัว (Scaling)
@@ -127,7 +127,7 @@ resource "azurerm_container_app" "ai_service" {
       readiness_probe {
         transport = "HTTP"
         port      = 8000
-        path      = "/health"
+        path      = "/api/v1/health"
       }
     }
     min_replicas = 1

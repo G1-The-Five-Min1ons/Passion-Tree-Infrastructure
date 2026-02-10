@@ -67,6 +67,7 @@ resource "azurerm_container_app" "go_backend" {
   ingress {
     external_enabled = true
     target_port      = 5000
+    allow_insecure_connections = true  # Cloudflare Flexible SSL → HTTP to origin
     traffic_weight {
       percentage      = 100
       latest_revision = true
@@ -82,21 +83,20 @@ resource "azurerm_container_app" "go_backend" {
 }
 
 # ─── Custom Domain ───
-# รอ DNS propagate ก่อน bind domain (Azure ต้องเจอ TXT record ก่อน)
-resource "time_sleep" "wait_for_dns" {
-  depends_on      = [cloudflare_record.domain_verification, cloudflare_record.backend_cname]
-  create_duration = "180s" # รอ 3 นาทีให้ DNS propagate
-}
+# จัดการ custom domain ผ่าน CLI แทน Terraform
+# เนื่องจาก Cloudflare proxy + Azure domain verification ชนกัน
+# หลัง terraform apply สำเร็จ → ใช้ az containerapp hostname add / bind
 
-resource "azurerm_container_app_custom_domain" "backend_domain" {
-  name             = "passion-tree.org"
-  container_app_id = azurerm_container_app.go_backend.id
-  depends_on       = [time_sleep.wait_for_dns]
+# resource "time_sleep" "wait_for_dns" {
+#   depends_on      = [cloudflare_record.domain_verification, cloudflare_record.backend_cname]
+#   create_duration = "180s"
+# }
 
-  # TLS Managed Certificate (uncomment หลัง custom domain สร้างสำเร็จครั้งแรก):
-  # container_app_environment_certificate_id = azurerm_container_app_environment_certificate.managed_cert.id
-  # certificate_binding_type                 = "SniEnabled"
-}
+# resource "azurerm_container_app_custom_domain" "backend_domain" {
+#   name             = "passion-tree.org"
+#   container_app_id = azurerm_container_app.go_backend.id
+#   depends_on       = [time_sleep.wait_for_dns]
+# }
 
 # FastAPI AI Service (Internal Ingress)
 resource "azurerm_container_app" "ai_service" {

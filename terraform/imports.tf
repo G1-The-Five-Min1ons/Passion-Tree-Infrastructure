@@ -1,4 +1,14 @@
 # ─── Import existing resources into Terraform state ───
-# ไฟล์นี้ว่างเปล่าเพราะ cleanup step จะลบ resource เก่าที่อยู่ผิด region
-# แล้ว Terraform จะสร้างใหม่ทั้งหมดใน East Asia
-# ถ้าต้องการ import ให้เพิ่ม import blocks กลับมา
+# Cloudflare DNS records ยังอยู่ (ไม่ได้ถูกลบตอน cleanup Azure)
+# ต้อง import เข้า state เพื่อไม่ให้ Terraform พยายามสร้างซ้ำ
+# หลัง apply สำเร็จครั้งแรก สามารถลบ import blocks ออกได้
+
+import {
+  to = cloudflare_record.backend_cname
+  id = "32186c2ab01024cb51b567d0a93cb056/a62c4d6c74508f5532b99a898b05483a"
+}
+
+import {
+  to = cloudflare_record.domain_verification
+  id = "32186c2ab01024cb51b567d0a93cb056/73c6e9662834d08a1f52ab7423ef106b"
+}

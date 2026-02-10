@@ -121,7 +121,7 @@ jobs:
               echo "Some resources still exist: $REMAINING — skipping state clear."
             fi
           fi
-
+ 
   # Step 1: Plan — รันทุก push & PR
   terraform-plan:
     name: Terraform Plan

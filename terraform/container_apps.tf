@@ -203,10 +203,6 @@ resource "azurerm_container_app" "ai_service" {
       value = var.jina_api_key 
     }
     secret { 
-      name = "hf-token"
-      value = var.hf_token 
-    }
-    secret { 
       name = "qdrant-key"
       value = var.qdrant_api_key 
     }
@@ -239,10 +235,6 @@ resource "azurerm_container_app" "ai_service" {
       env { 
         name = "JINA_API_KEY"
         secret_name = "jina-key" 
-      }
-      env { 
-        name = "HF_TOKEN"
-        secret_name = "hf-token" 
       }
       env { 
         name = "QDRANT_API_KEY"

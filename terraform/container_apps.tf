@@ -77,23 +77,23 @@ resource "azurerm_container_app" "go_backend" {
 
       # --- Database ---
       env { 
-        name = "DB_HOST" 
+        name = "AZURESQL_SERVER" 
         value = var.db_server 
       }
       env { 
-        name = "DB_NAME" 
+        name = "AZURESQL_DATABASE" 
         value = var.db_database 
       }
       env { 
-        name = "DB_USER" 
+        name = "AZURESQL_USER" 
         value = var.db_user 
       }
       env { 
-        name = "DB_PORT" 
+        name = "AZURESQL_PORT" 
         value = var.db_port 
       }
       env { 
-        name = "DB_PASSWORD"
+        name = "AZURESQL_PASSWORD"
         secret_name = "db-password" 
       }
 
@@ -153,6 +153,11 @@ resource "azurerm_container_app" "go_backend" {
       env { 
         name = "APP_URL"
         value = "https://passion-tree.org" 
+      }
+
+      env {
+        name  = "AI_SERVICE_URL"
+        value = "http://passion-tree-ai-service" 
       }
 
       readiness_probe {
@@ -242,6 +247,16 @@ resource "azurerm_container_app" "ai_service" {
       env { 
         name = "QDRANT_API_KEY"
         secret_name = "qdrant-key" 
+      }
+
+      env {
+        name  = "AI_SERVICE_URL"
+        value = "https://passion-tree-ai-service" 
+      }
+
+      env { 
+        name  = "APP_URL"
+        value = "https://passion-tree.org" 
       }
 
       readiness_probe {

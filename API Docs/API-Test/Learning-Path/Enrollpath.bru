@@ -1,0 +1,26 @@
+meta {
+  name: Enrollpath
+  type: http
+  seq: 7
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/:path_id/start
+  body: json
+  auth: inherit
+}
+
+params:path {
+  path_id: e384bd20-5d3b-1247-b374-061175543c0c
+}
+
+body:json {
+  {
+    "user_id": "3f9b2c6d-8288-4647-8d33-33d96e1a82b3"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

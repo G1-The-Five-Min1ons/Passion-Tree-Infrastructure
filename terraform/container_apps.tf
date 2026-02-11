@@ -159,12 +159,6 @@ resource "azurerm_container_app" "go_backend" {
         name  = "AI_SERVICE_URL"
         value = "http://passion-tree-ai-service" 
       }
-
-      readiness_probe {
-        transport = "HTTP"
-        port      = 5000
-        path      = "/api/v1/health"
-      }
     } # --- END container ---
 
     min_replicas = 1
@@ -251,11 +245,6 @@ resource "azurerm_container_app" "ai_service" {
         value = "https://passion-tree.org" 
       }
 
-      readiness_probe {
-        transport = "HTTP"
-        port      = 8000
-        path      = "/api/v1/health"
-      }
     } # --- END container ---
 
     min_replicas = 1

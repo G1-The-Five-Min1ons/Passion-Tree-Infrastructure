@@ -5,13 +5,16 @@ meta {
 }
 
 post {
-  url: http://localhost:5000/api/v1/learningpaths/uploadimg?filename=C:\Users\Napadech\Pictures\Screenshots\Screenshot 2026-02-11 000721.png
-  body: none
+  url: http://localhost:5000/api/v1/upload/presignedimg-url
+  body: json
   auth: inherit
 }
 
-params:query {
-  filename: C:\Users\Napadech\Pictures\Screenshots\Screenshot 2026-02-11 000721.png
+body:json {
+  {
+    "filename": "C:/Users/Napadech/Pictures/Screenshots/Screenshot 2026-02-14 003537.png",
+    "folder": "learning-path"
+  }
 }
 
 settings {

@@ -6,12 +6,19 @@ meta {
 
 post {
   url: http://localhost:5000/api/v1/learningpaths/questions/:question_id/choices
-  body: none
+  body: json
   auth: inherit
 }
 
 params:path {
-  question_id: 
+  question_id: 2B28450C-D68C-4879-9A8F-57941D9A9050
+}
+
+body:json {
+  {
+    "choice_text": "test1",
+    "is_correct": false
+  }
 }
 
 settings {

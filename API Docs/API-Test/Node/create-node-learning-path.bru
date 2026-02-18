@@ -11,15 +11,82 @@ post {
 }
 
 params:path {
-  path_id: e384bd20-5d3b-1247-b374-061175543c0c
+  path_id: fab43bc0-ba3b-44cc-ad62-c6196273c25a
 }
 
 body:json {
   {
-    "title": "Hello",
+    "title": "Metabolism",
     "description": "Hello Test 123",
-    "path_id": "e384bd20-5d3b-1247-b374-061175543c0c",
-    "sequence": "1"
+    "sequence": "4",
+    "material": [
+      {
+        "type": "png",
+        "url": "https://treeimages.blob.core.windows.net/learning-paths/biology_101.png"
+      },
+      {
+        "type": "png",
+        "url": "https://treeimages.blob.core.windows.net/learning-paths/biology_101.png"
+      },
+      {
+        "type": "png",
+        "url": "https://treeimages.blob.core.windows.net/learning-paths/biology_101.png"
+      }
+    ],
+    "Question": [
+      {
+        "question_text": "1. ภาวะความสัมพันธ์ของสิ่งมีชีวิตใดเป็นแบบ +/+",
+        "type": "multiple",
+        "choice": [
+          {
+            "choice_text": "คนกับคน",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "หมาป่ากับกวาง",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "กาฝากกับต้นไม้",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "ควายกับนกเอี้ยง",
+            "is_correct": true,
+            "reasoning": "เป็นความสัมพันธ์ที่ได้ประโยชน์ทั้งคู่ นกเอี้ยงได้อาหาร ส่วนควายได้การทำความสะอาด"
+          }
+        ]
+      },
+      {
+        "question_text": "2. ป่าชนิดใดเป็นป่าแบบไม่ผลัดใบ",
+        "type": "multiple",
+        "choice": [
+          {
+            "choice_text": "ป่าดิบชื้น",
+            "is_correct": true,
+            "reasoning": "เนื่องจากเป็นป่าที่ไม่มีการผลัดใบของต้นไม้พร้อมกันจึงทำให้ป่ามีสีเขียวตลอดทั้งปี"
+          },
+          {
+            "choice_text": "ป่าเบญจพรรณ",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "ป่าเต็งรัง",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "ป่าหญ้า",
+            "is_correct": false,
+            "reasoning": ""
+          }
+        ]
+      }
+    ]
   }
 }
 

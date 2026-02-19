@@ -1,0 +1,25 @@
+meta {
+  name: create-tree-from-learnign-path
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:5000/api/v1/trees
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Sustainable Agriculture",
+    "difficulties": "hard",
+    "album_id": "6b97779d-05b4-9a41-a664-3303605a1282",
+    "path_id": "047a9e53-3963-43c2-b7e1-04e6d665965f"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

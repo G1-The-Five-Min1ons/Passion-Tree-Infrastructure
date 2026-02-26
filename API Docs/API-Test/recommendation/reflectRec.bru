@@ -1,0 +1,21 @@
+meta {
+  name: reflectRec
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:5000/api/v1/reflect/recomendation?user_id&tree_id
+  body: none
+  auth: inherit
+}
+
+params:query {
+  user_id: 
+  tree_id: 
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

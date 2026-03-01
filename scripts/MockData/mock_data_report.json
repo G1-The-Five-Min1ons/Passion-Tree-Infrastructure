@@ -1,0 +1,110 @@
+{
+  "users": {
+    "farlos3": {
+      "user_id": "8049de4b-ec43-40f8-b429-6fa5dcfd4351",
+      "role": "teacher"
+    }
+  },
+  "learning_paths": [
+    {
+      "path_id": "77efa9be-c225-447f-a8af-4355d1b19e31",
+      "title": "Biology 101 - พื้นฐานชีววิทยา",
+      "creator": "farlos3"
+    },
+    {
+      "path_id": "3c9d2a74-bfbe-465c-9d48-9d7e7576819d",
+      "title": "Web Development Fundamentals",
+      "creator": "farlos3"
+    },
+    {
+      "path_id": "79de919a-2e8f-4baa-acc4-34110e52e77c",
+      "title": "Chemistry - เคมีพื้นฐาน",
+      "creator": "farlos3"
+    },
+    {
+      "path_id": "09a05eb9-f549-4a98-b62e-8e05ce6dc61b",
+      "title": "Cybersecurity Basics",
+      "creator": "farlos3"
+    },
+    {
+      "path_id": "164fd4cc-3250-4013-a433-478005ebb7ac",
+      "title": "Python for Data Science",
+      "creator": "farlos3"
+    }
+  ],
+  "nodes": {
+    "77efa9be-c225-447f-a8af-4355d1b19e31": [
+      {
+        "node_id": "30c4a963-e23b-4ad5-8e1c-1ec5500e6972",
+        "title": "เซลล์และโครงสร้าง"
+      },
+      {
+        "node_id": "b9a77a9d-9fb2-4922-8212-c61a4b0a8ab7",
+        "title": "ระบบนิเวศ"
+      },
+      {
+        "node_id": "989de2fc-2e40-4a03-be64-acc7dbe31d2c",
+        "title": "การจำแนกสิ่งมีชีวิต"
+      },
+      {
+        "node_id": "ca3e7e42-4dd7-41e7-a5ec-2f9863db011e",
+        "title": "พันธุศาสตร์เบื้องต้น"
+      }
+    ],
+    "3c9d2a74-bfbe-465c-9d48-9d7e7576819d": [
+      {
+        "node_id": "b0ae54b6-9ed4-4a34-b95b-6f0b747a198a",
+        "title": "HTML & CSS Basics"
+      },
+      {
+        "node_id": "0c825849-92da-4007-b07f-6a3fc9e8f983",
+        "title": "JavaScript Essentials"
+      },
+      {
+        "node_id": "03103168-e76a-42a7-814d-bb1bc2c66d16",
+        "title": "React.js Fundamentals"
+      }
+    ],
+    "79de919a-2e8f-4baa-acc4-34110e52e77c": [
+      {
+        "node_id": "cb3fb657-bae7-43e0-ad25-8a82b21b1cb4",
+        "title": "โครงสร้างอะตอม"
+      },
+      {
+        "node_id": "b9e7dbbe-374b-4ee4-b4ae-83042f6289be",
+        "title": "ตารางธาตุ"
+      },
+      {
+        "node_id": "b59e34ea-fff9-4ce7-b348-3a7ac174025a",
+        "title": "พันธะเคมี"
+      }
+    ],
+    "09a05eb9-f549-4a98-b62e-8e05ce6dc61b": [
+      {
+        "node_id": "3a16d978-b736-471b-8600-c752160cd3c4",
+        "title": "Introduction to Cybersecurity"
+      },
+      {
+        "node_id": "2a585093-f699-486d-9dd2-ac0115c0b6e9",
+        "title": "Malware Analysis"
+      },
+      {
+        "node_id": "0c69a837-d4ad-4bfb-b459-13a60f23149c",
+        "title": "Network Security"
+      }
+    ],
+    "164fd4cc-3250-4013-a433-478005ebb7ac": [
+      {
+        "node_id": "1d3c1267-1aee-439d-975b-de3f32efa33d",
+        "title": "Python Basics for Data Science"
+      },
+      {
+        "node_id": "57d0cc56-3a0e-43ec-91d0-75a7f5d5220c",
+        "title": "Pandas & NumPy"
+      }
+    ]
+  },
+  "albums": [],
+  "trees": [],
+  "tree_nodes": []
+}

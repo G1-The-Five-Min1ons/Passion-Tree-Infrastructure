@@ -1,0 +1,31 @@
+meta {
+  name: Comment
+  type: http
+  seq: 12
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/nodes/:node_id/comments
+  body: json
+  auth: inherit
+}
+
+params:path {
+  node_id: 0c69a837-d4ad-4bfb-b459-13a60f23149c
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiREJERkMwNkQtQTU4Qi00OUM5LTkzMzItREY5MTVBOUU0NDVFIiwidXNlcm5hbWUiOiJCYW5rVXdVIiwicm9sZSI6InRlYWNoZXIiLCJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaXNzIjoicGFzc2lvbi10cmVlIiwic3ViIjoiREJERkMwNkQtQTU4Qi00OUM5LTkzMzItREY5MTVBOUU0NDVFIiwiZXhwIjoxNzcyNjQ3Mzk0LCJuYmYiOjE3NzI1NjA5OTQsImlhdCI6MTc3MjU2MDk5NH0.RjdCBTETFC3w7RETcvLaAbycLZSKtGyu6zrrsdT14W0
+}
+
+body:json {
+  {
+    "message": "Great content!",
+    "parent_id": null
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

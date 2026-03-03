@@ -1,0 +1,24 @@
+meta {
+  name: Delete Comment
+  type: http
+  seq: 14
+}
+
+delete {
+  url: http://localhost:5000/api/v1/learningpaths/comments/:node_id
+  body: none
+  auth: inherit
+}
+
+params:path {
+  node_id: b8f44144-8c3d-434a-87e0-877062cb43ea
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiREJERkMwNkQtQTU4Qi00OUM5LTkzMzItREY5MTVBOUU0NDVFIiwidXNlcm5hbWUiOiJCYW5rVXdVIiwicm9sZSI6InRlYWNoZXIiLCJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiaXNzIjoicGFzc2lvbi10cmVlIiwic3ViIjoiREJERkMwNkQtQTU4Qi00OUM5LTkzMzItREY5MTVBOUU0NDVFIiwiZXhwIjoxNzcyNjQ3Mzk0LCJuYmYiOjE3NzI1NjA5OTQsImlhdCI6MTc3MjU2MDk5NH0.RjdCBTETFC3w7RETcvLaAbycLZSKtGyu6zrrsdT14W0
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

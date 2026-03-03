@@ -1,18 +1,3 @@
-"""
-Passion Tree - Mock Data Seeder
-================================
-ส่ง mock data ไปที่ Backend API เพื่อเพิ่มข้อมูลลง Database
-
-Usage:
-    python mock_data_seed.py                        # ใช้ default localhost:5000
-    python mock_data_seed.py --base-url http://localhost:8080
-    python mock_data_seed.py --skip-verify           # ข้าม email verification
-
-หมายเหตุ:
-    - Backend ต้องรันอยู่ก่อน
-    - ถ้า backend ต้อง verify email ให้ใช้ --skip-verify (จะ login ด้วย credential ที่สร้างไว้)
-"""
-
 import requests
 import json
 import time

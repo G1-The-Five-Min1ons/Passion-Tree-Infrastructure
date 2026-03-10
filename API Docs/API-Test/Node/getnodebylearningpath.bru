@@ -5,17 +5,17 @@ meta {
 }
 
 get {
-  url: http://localhost:5000/api/v1/learningpaths/:path_id/nodes?user_id=a4bdfa58-e41e-4344-aa9e-d35f3dcd53c6
+  url: http://localhost:5000/api/v1/learningpaths/:path_id/nodes
   body: none
   auth: inherit
 }
 
-params:query {
-  user_id: a4bdfa58-e41e-4344-aa9e-d35f3dcd53c6
+params:path {
+  path_id: 9363104B-336E-49B1-B2CD-081BD5490E4B
 }
 
-params:path {
-  path_id: 77EFA9BE-C225-447F-A8AF-4355D1B19E31
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTNGNzQ5NDktOUFDNS00MUJELUFEQTEtNTIxRTM2RDI3MTJCIiwidXNlcm5hbWUiOiJuYXBhZGVjaDAwNyIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6IjkzRjc0OTQ5LTlBQzUtNDFCRC1BREExLTUyMUUzNkQyNzEyQiIsImV4cCI6MTc3MzA1Mzg1MSwibmJmIjoxNzcyOTY3NDUxLCJpYXQiOjE3NzI5Njc0NTF9.ngElDHwtObUXijCqCAQ0jEs4YNLsNb-PPSRBSExZljY
 }
 
 settings {

@@ -63,7 +63,16 @@ services:
     depends_on:
       redis:
         condition: service_healthy
-
+  
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run
+    depends_on:
+      - backend-go
+    
 volumes:
   ai-model-cache:
     driver: local

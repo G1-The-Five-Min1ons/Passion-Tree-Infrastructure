@@ -1,0 +1,28 @@
+meta {
+  name: Update Weekly Progress Email
+  type: http
+  seq: 12
+}
+
+put {
+  url: http://localhost:5000/api/v1/settings/email_notify_weekly_progress
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "key": "email_notify_weekly_progress",
+    "value": "true"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

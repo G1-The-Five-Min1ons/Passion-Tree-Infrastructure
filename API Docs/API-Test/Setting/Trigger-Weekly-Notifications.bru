@@ -1,0 +1,20 @@
+meta {
+  name: Trigger Weekly Notifications (Debug)
+  type: http
+  seq: 17
+}
+
+post {
+  url: http://localhost:5000/api/v1/debug/notifications/weekly
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

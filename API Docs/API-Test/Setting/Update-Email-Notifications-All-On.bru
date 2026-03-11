@@ -1,0 +1,46 @@
+meta {
+  name: Update Email Notifications (All On)
+  type: http
+  seq: 18
+}
+
+put {
+  url: http://localhost:5000/api/v1/settings
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    {
+      "key": "email_notify_platform_updates",
+      "value": "true"
+    },
+    {
+      "key": "email_notify_weekly_progress",
+      "value": "true"
+    },
+    {
+      "key": "email_notify_daily_reminder",
+      "value": "true"
+    },
+    {
+      "key": "email_notify_course_recommendations",
+      "value": "true"
+    },
+    {
+      "key": "email_notify_learning_path_comments",
+      "value": "true"
+    }
+  ]
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

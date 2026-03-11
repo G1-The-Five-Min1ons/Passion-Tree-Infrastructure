@@ -1,0 +1,38 @@
+meta {
+  name: Update Account Settings (Batch)
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:5000/api/v1/settings
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiRTI4MDJBODctMzUxNy00QzMzLUFFOTctRjIzQTIxQTA0NEMzIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjIiLCJyb2xlIjoic3R1ZGVudCIsImlzcyI6InBhc3Npb24tdHJlZSIsImV4cCI6MTc2ODIzNzY0OCwibmJmIjoxNzY4MTUxMjQ4LCJpYXQiOjE3NjgxNTEyNDh9.GC7xEQV21g4RRcPgfa4EPYaJmCEw2tTOgmZ1LMPiKsE
+  Content-Type: application/json
+}
+
+body:json {
+  [
+    {
+      "key": "timezone",
+      "value": "Asia/Bangkok"
+    },
+    {
+      "key": "language",
+      "value": "th"
+    },
+    {
+      "key": "theme",
+      "value": "dark"
+    }
+  ]
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

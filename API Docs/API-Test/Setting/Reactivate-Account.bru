@@ -1,0 +1,20 @@
+meta {
+  name: Reactivate Account
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:5000/api/v1/auth/reactivate
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiRTI4MDJBODctMzUxNy00QzMzLUFFOTctRjIzQTIxQTA0NEMzIiwidXNlcm5hbWUiOiJ0ZXN0dXNlcjIiLCJyb2xlIjoic3R1ZGVudCIsImlzcyI6InBhc3Npb24tdHJlZSIsImV4cCI6MTc2ODIzNzY0OCwibmJmIjoxNzY4MTUxMjQ4LCJpYXQiOjE3NjgxNTEyNDh9.GC7xEQV21g4RRcPgfa4EPYaJmCEw2tTOgmZ1LMPiKsE
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

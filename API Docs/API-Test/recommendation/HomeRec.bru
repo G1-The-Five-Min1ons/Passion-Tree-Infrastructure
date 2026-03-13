@@ -5,11 +5,16 @@ meta {
 }
 
 get {
-  url: 
+  url: http://localhost:5000/api/v1/home/recommendation
   body: none
   auth: inherit
 }
 
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTNGNzQ5NDktOUFDNS00MUJELUFEQTEtNTIxRTM2RDI3MTJCIiwidXNlcm5hbWUiOiJuYXBhZGVjaDAwNyIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6IjkzRjc0OTQ5LTlBQzUtNDFCRC1BREExLTUyMUUzNkQyNzEyQiIsImV4cCI6MTc3MzUwMzU5NCwibmJmIjoxNzczNDE3MTk0LCJpYXQiOjE3NzM0MTcxOTR9.jRl-6Na8yallzZZjOirp7gt-9ptq2xjzrwbVN3H4x5g
+}
+
 settings {
   encodeUrl: true
+  timeout: 0
 }

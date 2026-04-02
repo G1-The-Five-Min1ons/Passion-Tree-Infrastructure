@@ -1,0 +1,31 @@
+meta {
+  name: submitRating
+  type: http
+  seq: 16
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/:path_id/ratings
+  body: json
+  auth: inherit
+}
+
+params:path {
+  path_id: 00000
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTNGNzQ5NDktOUFDNS00MUJELUFEQTEtNTIxRTM2RDI3MTJCIiwidXNlcm5hbWUiOiJuYXBhZGVjaDAwNyIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6IjkzRjc0OTQ5LTlBQzUtNDFCRC1BREExLTUyMUUzNkQyNzEyQiIsImV4cCI6MTc3MzA1Mzg1MSwibmJmIjoxNzcyOTY3NDUxLCJpYXQiOjE3NzI5Njc0NTF9.ngElDHwtObUXijCqCAQ0jEs4YNLsNb-PPSRBSExZljY
+}
+
+body:json {
+  {
+    "rating_content": 4,
+    "rating_instruct": 5
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

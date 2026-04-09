@@ -1,17 +1,17 @@
 meta {
-  name: edit-node
+  name: editQuestion
   type: http
-  seq: 6
+  seq: 18
 }
 
 put {
-  url: http://localhost:5000/api/v1/learningpaths/nodes/:node_id
+  url: http://localhost:5000/api/v1/learningpaths/questions/:question_id
   body: json
   auth: inherit
 }
 
 params:path {
-  node_id: D7D750AB-DAE0-4F4A-990F-0FD22EBB797F
+  question_id: 0000
 }
 
 headers {
@@ -20,9 +20,8 @@ headers {
 
 body:json {
   {
-    "title": "",
-    "description": "",
-    "link_vdo": ""
+    "question_text": "แก้โจทย์คำถามใหม่เป็นอะไรดี?",
+    "type": "multiple_choice"
   }
 }
 

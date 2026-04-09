@@ -1,17 +1,17 @@
 meta {
-  name: edit-node
+  name: editChoice
   type: http
-  seq: 6
+  seq: 19
 }
 
 put {
-  url: http://localhost:5000/api/v1/learningpaths/nodes/:node_id
+  url: http://localhost:5000/api/v1/learningpaths/questions/choices/:choice_id
   body: json
   auth: inherit
 }
 
 params:path {
-  node_id: D7D750AB-DAE0-4F4A-990F-0FD22EBB797F
+  choice_id: 0000
 }
 
 headers {
@@ -20,9 +20,9 @@ headers {
 
 body:json {
   {
-    "title": "",
-    "description": "",
-    "link_vdo": ""
+    "choice_text": "ข้อความตัวเลือกที่แก้ไขแล้ว",
+    "is_correct": true,
+    "reasoning": "อธิบายเหตุผลว่าทำไมข้อนี้ถึงถูก/ผิด"
   }
 }
 

@@ -1,0 +1,20 @@
+meta {
+  name: sync-bulk-GO
+  type: http
+  seq: 11
+}
+
+post {
+  url: http://localhost:5000/api/v1/learningpaths/sync/bulk
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTNGNzQ5NDktOUFDNS00MUJELUFEQTEtNTIxRTM2RDI3MTJCIiwidXNlcm5hbWUiOiJuYXBhZGVjaDAwNyIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6IjkzRjc0OTQ5LTlBQzUtNDFCRC1BREExLTUyMUUzNkQyNzEyQiIsImV4cCI6MTc3NjkzNTE3MiwibmJmIjoxNzc2ODQ4NzcyLCJpYXQiOjE3NzY4NDg3NzJ9.4280_YcQzg78LRpQyWnJ5biDnXjp7fKKCegxKrqQaYE
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

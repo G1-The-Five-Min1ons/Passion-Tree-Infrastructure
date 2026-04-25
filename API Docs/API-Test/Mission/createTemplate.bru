@@ -1,0 +1,31 @@
+meta {
+  name: createTemplate
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5000/api/v1/admin/missions/templates
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTNGNzQ5NDktOUFDNS00MUJELUFEQTEtNTIxRTM2RDI3MTJCIiwidXNlcm5hbWUiOiJuYXBhZGVjaDAwNyIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6IjkzRjc0OTQ5LTlBQzUtNDFCRC1BREExLTUyMUUzNkQyNzEyQiIsImV4cCI6MTc3NjkzNTE3MiwibmJmIjoxNzc2ODQ4NzcyLCJpYXQiOjE3NzY4NDg3NzJ9.4280_YcQzg78LRpQyWnJ5biDnXjp7fKKCegxKrqQaYE
+}
+
+body:json {
+  {
+    "title": "Complete 3 Nodes",
+    "description": "Complete 3 learning nodes this week",
+    "reward_xp": 100,
+    "reward_heart": 5,
+    "condition_type": "COMPLETE_NODE",
+    "target_value": 3
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

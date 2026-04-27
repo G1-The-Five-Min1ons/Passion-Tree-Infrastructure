@@ -84,11 +84,6 @@ variable "jina_api_key" {
   sensitive = true
 }
 
-variable "hf_token" {
-  type      = string
-  sensitive = true
-}
-
 variable "qdrant_url" {
   type = string
 }

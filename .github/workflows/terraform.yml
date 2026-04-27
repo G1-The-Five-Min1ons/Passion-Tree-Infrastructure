@@ -3,10 +3,10 @@ name: Terraform Plan & Apply
 on:
   push:
     branches: ["main"]
-    paths: ["terraform/**"]       # รันเฉพาะเมื่อแก้ไฟล์ Terraform
+    paths: ["terraform/**", ".github/workflows/terraform.yml"]
   pull_request:
     branches: ["main"]
-    paths: ["terraform/**"]
+    paths: ["terraform/**", ".github/workflows/terraform.yml"]
 
 permissions:
   id-token: write

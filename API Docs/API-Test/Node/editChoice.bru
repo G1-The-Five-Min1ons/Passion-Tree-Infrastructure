@@ -1,0 +1,32 @@
+meta {
+  name: editChoice
+  type: http
+  seq: 19
+}
+
+put {
+  url: http://localhost:5000/api/v1/learningpaths/questions/choices/:choice_id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  choice_id: 0000
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOTNGNzQ5NDktOUFDNS00MUJELUFEQTEtNTIxRTM2RDI3MTJCIiwidXNlcm5hbWUiOiJuYXBhZGVjaDAwNyIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6IjkzRjc0OTQ5LTlBQzUtNDFCRC1BREExLTUyMUUzNkQyNzEyQiIsImV4cCI6MTc3MzA1Mzg1MSwibmJmIjoxNzcyOTY3NDUxLCJpYXQiOjE3NzI5Njc0NTF9.ngElDHwtObUXijCqCAQ0jEs4YNLsNb-PPSRBSExZljY
+}
+
+body:json {
+  {
+    "choice_text": "ข้อความตัวเลือกที่แก้ไขแล้ว",
+    "is_correct": true,
+    "reasoning": "อธิบายเหตุผลว่าทำไมข้อนี้ถึงถูก/ผิด"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

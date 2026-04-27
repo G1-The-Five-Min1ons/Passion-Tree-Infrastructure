@@ -9,17 +9,16 @@
 # Cloudflare Proxy (เมฆส้ม) จัดการ TLS termination ให้
 resource "cloudflare_record" "backend_cname" {
   zone_id = var.cloudflare_zone_id
-  name    = "@"
+  name    = "api"
   content = azurerm_container_app.go_backend.ingress[0].fqdn
   type    = "CNAME"
-  proxied = true # Cloudflare จัดการ SSL/TLS ให้
+  proxied = true
 }
 
-# TXT Record สำหรับ Azure Domain Verification
-# Azure ต้องการ record นี้เพื่อยืนยันว่าเราเป็นเจ้าของ domain
+# TXT Record สำหรับ Azure Domain Verification ของ api.passion-tree.org
 resource "cloudflare_record" "domain_verification" {
   zone_id = var.cloudflare_zone_id
-  name    = "asuid"
+  name    = "asuid.api"
   content = azurerm_container_app.go_backend.custom_domain_verification_id
   type    = "TXT"
 }

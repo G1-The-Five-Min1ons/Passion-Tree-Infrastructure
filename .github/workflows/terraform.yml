@@ -179,7 +179,7 @@ jobs:
           TF_VAR_hf_token: ${{ secrets.HF_TOKEN }}
           TF_VAR_qdrant_url: ${{ secrets.QDRANT_URL }}
           TF_VAR_qdrant_api_key: ${{ secrets.QDRANT_API_KEY }}
-          
+
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
 
       # Comment ผล plan ใน PR ให้ทีมรีวิวก่อน apply

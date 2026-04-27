@@ -15,7 +15,7 @@ terraform {
   # Remote State — เก็บ state ใน Azure Storage เพื่อไม่ให้หายเมื่อ CI/CD รันใหม่
   backend "azurerm" {
     resource_group_name  = "Passion-Tree"
-    storage_account_name = "passiontreestate"
+    storage_account_name = "passiontreestg2"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
     use_oidc             = true  # ใช้ OIDC เหมือน provider authentication

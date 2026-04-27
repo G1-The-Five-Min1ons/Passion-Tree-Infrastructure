@@ -169,7 +169,6 @@ jobs:
           # AI
           TF_VAR_groq_api_key: ${{ secrets.GROQ_API_KEY }}
           TF_VAR_jina_api_key: ${{ secrets.JINA_API_KEY }}
-          TF_VAR_hf_token: ${{ secrets.HF_TOKEN }}
           TF_VAR_qdrant_url: ${{ secrets.QDRANT_URL }}
           TF_VAR_qdrant_api_key: ${{ secrets.QDRANT_API_KEY }}
 
@@ -237,7 +236,6 @@ jobs:
           # AI
           TF_VAR_groq_api_key: ${{ secrets.GROQ_API_KEY }}
           TF_VAR_jina_api_key: ${{ secrets.JINA_API_KEY }}
-          TF_VAR_hf_token: ${{ secrets.HF_TOKEN }}
           TF_VAR_qdrant_url: ${{ secrets.QDRANT_URL }}
           TF_VAR_qdrant_api_key: ${{ secrets.QDRANT_API_KEY }}
 

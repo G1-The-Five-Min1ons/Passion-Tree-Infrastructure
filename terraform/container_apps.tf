@@ -37,18 +37,6 @@ resource "azurerm_container_app" "go_backend" {
     value = var.db_password
   }
   secret {
-    name  = "mailersend-key"
-    value = var.mailersend_api_key
-  }
-  secret {
-    name  = "smtp-user"
-    value = var.smtp_username
-  }
-  secret {
-    name  = "smtp-pass"
-    value = var.smtp_password
-  }
-  secret {
     name  = "storage-conn"
     value = var.azure_storage_connection_string
   }
@@ -97,31 +85,6 @@ resource "azurerm_container_app" "go_backend" {
       }
 
       # --- SMTP / MailerSend ---
-      env {
-        name  = "SMTP_HOST"
-        value = var.smtp_host
-      }
-      env {
-        name  = "SMTP_PORT"
-        value = var.smtp_port
-      }
-      env {
-        name  = "SMTP_FROM_EMAIL"
-        value = var.smtp_from_email
-      }
-      env {
-        name        = "MAILERSEND_API_KEY"
-        secret_name = "mailersend-key"
-      }
-      env {
-        name        = "SMTP_USERNAME"
-        secret_name = "smtp-user"
-      }
-      env {
-        name        = "SMTP_PASSWORD"
-        secret_name = "smtp-pass"
-      }
-
       # --- Azure Storage ---
       env {
         name  = "AZURE_STORAGE_ACCOUNT_NAME"

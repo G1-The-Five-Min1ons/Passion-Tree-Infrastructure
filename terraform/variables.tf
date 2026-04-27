@@ -50,34 +50,6 @@ variable "db_port" {
   default = "1433"
 }
 
-# ── SMTP / MailerSend ──
-variable "mailersend_api_key" {
-  type      = string
-  sensitive = true
-}
-
-variable "smtp_host" {
-  type = string
-}
-
-variable "smtp_port" {
-  type = string
-}
-
-variable "smtp_username" {
-  type      = string
-  sensitive = true
-}
-
-variable "smtp_password" {
-  type      = string
-  sensitive = true
-}
-
-variable "smtp_from_email" {
-  type = string
-}
-
 # ── Azure Storage ──
 variable "azure_storage_account_name" {
   type = string

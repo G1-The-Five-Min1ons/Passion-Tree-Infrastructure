@@ -160,13 +160,6 @@ jobs:
           TF_VAR_db_user: ${{ secrets.AZURESQL_USER }}
           TF_VAR_db_password: ${{ secrets.AZURESQL_PASSWORD }}
           TF_VAR_db_port: ${{ secrets.AZURESQL_PORT }}
-          # SMTP
-          TF_VAR_mailersend_api_key: ${{ secrets.MAILERSEND_API_KEY }}
-          TF_VAR_smtp_host: ${{ secrets.SMTP_HOST }}
-          TF_VAR_smtp_port: ${{ secrets.SMTP_PORT }}
-          TF_VAR_smtp_username: ${{ secrets.SMTP_USERNAME }}
-          TF_VAR_smtp_password: ${{ secrets.SMTP_PASSWORD }}
-          TF_VAR_smtp_from_email: ${{ secrets.SMTP_FROM_EMAIL }}
           # Storage
           TF_VAR_azure_storage_account_name: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
           TF_VAR_azure_storage_account_key: ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }}
@@ -235,13 +228,6 @@ jobs:
           TF_VAR_db_user: ${{ secrets.AZURESQL_USER }}
           TF_VAR_db_password: ${{ secrets.AZURESQL_PASSWORD }}
           TF_VAR_db_port: ${{ secrets.AZURESQL_PORT }}
-          # SMTP
-          TF_VAR_mailersend_api_key: ${{ secrets.MAILERSEND_API_KEY }}
-          TF_VAR_smtp_host: ${{ secrets.SMTP_HOST }}
-          TF_VAR_smtp_port: ${{ secrets.SMTP_PORT }}
-          TF_VAR_smtp_username: ${{ secrets.SMTP_USERNAME }}
-          TF_VAR_smtp_password: ${{ secrets.SMTP_PASSWORD }}
-          TF_VAR_smtp_from_email: ${{ secrets.SMTP_FROM_EMAIL }}
           # Storage
           TF_VAR_azure_storage_account_name: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
           TF_VAR_azure_storage_account_key: ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }}

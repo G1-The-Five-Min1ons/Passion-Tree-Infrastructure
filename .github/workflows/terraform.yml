@@ -1,5 +1,5 @@
 name: Terraform Plan & Apply
- 
+
 on:
   push:
     branches: ["main"]

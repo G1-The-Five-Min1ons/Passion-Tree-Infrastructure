@@ -135,6 +135,21 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Break stale state lock (if any)
+        run: |
+          az storage blob lease break \
+            --container-name tfstate \
+            --blob-name terraform.tfstate \
+            --account-name passiontreestg2 \
+            --auth-mode login 2>/dev/null || true
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -205,6 +220,21 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Break stale state lock (if any)
+        run: |
+          az storage blob lease break \
+            --container-name tfstate \
+            --blob-name terraform.tfstate \
+            --account-name passiontreestg2 \
+            --auth-mode login 2>/dev/null || true
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3

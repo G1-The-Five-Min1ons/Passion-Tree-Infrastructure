@@ -37,22 +37,22 @@ jobs:
       - name: Create Storage Account for TF State (if not exists)
         run: |
           # สร้าง Storage Account (ถ้ายังไม่มี)
-          if ! az storage account show --name passiontreestate --resource-group Passion-Tree &>/dev/null; then
+          if ! az storage account show --name passiontreestg2 --resource-group Passion-Tree &>/dev/null; then
             echo "Creating storage account for Terraform state..."
             az storage account create \
-              --name passiontreestate \
+              --name passiontreestg2 \
               --resource-group Passion-Tree \
-              --location southeastasia \
-              --sku Standard_LRS \
-              --min-tls-version TLS1_2
+              --location eastasia \
+              --sku Standard_LRS
           fi
 
           # สร้าง Blob Container (ถ้ายังไม่มี)
-          if ! az storage container show --name tfstate --account-name passiontreestate &>/dev/null; then
+          if ! az storage container show --name tfstate --account-name passiontreestg2 --auth-mode login &>/dev/null; then
             echo "Creating blob container for state file..."
             az storage container create \
               --name tfstate \
-              --account-name passiontreestate
+              --account-name passiontreestg2 \
+              --auth-mode login
           fi
 
       - name: Cleanup stale resources (if location mismatch)
@@ -99,7 +99,7 @@ jobs:
               az storage blob delete \
                 --container-name tfstate \
                 --name terraform.tfstate \
-                --account-name passiontreestate \
+                --account-name passiontreestg2 \
                 --auth-mode login 2>/dev/null || true
               echo "State cleared. Terraform will create fresh resources."
             else
@@ -114,7 +114,7 @@ jobs:
               az storage blob delete \
                 --container-name tfstate \
                 --name terraform.tfstate \
-                --account-name passiontreestate \
+                --account-name passiontreestg2 \
                 --auth-mode login 2>/dev/null || true
               echo "State cleared."
             else

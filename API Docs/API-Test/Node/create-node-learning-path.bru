@@ -5,82 +5,100 @@ meta {
 }
 
 post {
-  url: http://localhost:5000/api/v1/learningpaths/:path_id/nodes
+  url: https://api.passion-tree.org/api/v1/learningpaths/:path_id/nodes
   body: json
   auth: inherit
 }
 
 params:path {
-  path_id: fab43bc0-ba3b-44cc-ad62-c6196273c25a
+  path_id: 36c44308-a661-4941-b768-74c04464ff68
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiODRBQkVDNjQtRUI5OS00OEIxLUIwNzYtQzc3RUI1OEE3NkY1IiwidXNlcm5hbWUiOiJuYXBhZGVjaCIsInJvbGUiOiJ0ZWFjaGVyIiwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImlzcyI6InBhc3Npb24tdHJlZSIsInN1YiI6Ijg0QUJFQzY0LUVCOTktNDhCMS1CMDc2LUM3N0VCNThBNzZGNSIsImV4cCI6MTc3NzY2OTg0MSwibmJmIjoxNzc3NTgzNDQxLCJpYXQiOjE3Nzc1ODM0NDF9.Iqtvg_-njg5qhvfUyRFS3CqHgYuslS8SjghL666U19E
 }
 
 body:json {
   {
-    "title": "Metabolism",
-    "description": "Hello Test 123",
+    "title": "สงครามโลกครั้งที่ 1 และ 2 (World Wars)",
+    "description": "สาเหตุ ผลกระทบ และการเปลี่ยนแปลงเขตแดนของโลกหลังสงครามใหญ่",
     "sequence": "4",
-    "material": [
-      {
-        "type": "png",
-        "url": "https://treeimages.blob.core.windows.net/learning-paths/biology_101.png"
-      },
-      {
-        "type": "png",
-        "url": "https://treeimages.blob.core.windows.net/learning-paths/biology_101.png"
-      },
-      {
-        "type": "png",
-        "url": "https://treeimages.blob.core.windows.net/learning-paths/biology_101.png"
-      }
-    ],
+    "link_vdo": "https://youtu.be/9ed25dl4P1A?si=rnpZAnItOAZQGCwC",
+    "material": [],
     "Question": [
       {
-        "question_text": "1. ภาวะความสัมพันธ์ของสิ่งมีชีวิตใดเป็นแบบ +/+",
+        "question_text": "เหตุการณ์ใดที่เป็นชนวนเหตุสำคัญของสงครามโลกครั้งที่ 1",
         "type": "multiple",
         "choice": [
           {
-            "choice_text": "คนกับคน",
+            "choice_text": "การล่มสลายของตลาดหุ้น",
             "is_correct": false,
             "reasoning": ""
           },
           {
-            "choice_text": "หมาป่ากับกวาง",
-            "is_correct": false,
-            "reasoning": ""
-          },
-          {
-            "choice_text": "กาฝากกับต้นไม้",
-            "is_correct": false,
-            "reasoning": ""
-          },
-          {
-            "choice_text": "ควายกับนกเอี้ยง",
+            "choice_text": "การลอบปลงพระชนม์อาร์ชดยุก ฟรานซ์ เฟอร์ดินานด์",
             "is_correct": true,
-            "reasoning": "เป็นความสัมพันธ์ที่ได้ประโยชน์ทั้งคู่ นกเอี้ยงได้อาหาร ส่วนควายได้การทำความสะอาด"
+            "reasoning": ""
+          },
+          {
+            "choice_text": "การบุกยึดครองโปแลนด์",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "การทิ้งระเบิดที่เพิร์ลฮาร์เบอร์",
+            "is_correct": false,
+            "reasoning": ""
           }
         ]
       },
       {
-        "question_text": "2. ป่าชนิดใดเป็นป่าแบบไม่ผลัดใบ",
+        "question_text": "องค์การระหว่างประเทศใดถูกก่อตั้งขึ้นหลัง 'สงครามโลกครั้งที่ 2' เพื่อรักษาความมั่นคงของโลก",
         "type": "multiple",
         "choice": [
           {
-            "choice_text": "ป่าดิบชื้น",
+            "choice_text": "สันนิบาตชาติ (League of Nations)",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "องค์การสหประชาชาติ (United Nations)",
             "is_correct": true,
-            "reasoning": "เนื่องจากเป็นป่าที่ไม่มีการผลัดใบของต้นไม้พร้อมกันจึงทำให้ป่ามีสีเขียวตลอดทั้งปี"
+            "reasoning": ""
           },
           {
-            "choice_text": "ป่าเบญจพรรณ",
+            "choice_text": "สหภาพยุโรป",
             "is_correct": false,
             "reasoning": ""
           },
           {
-            "choice_text": "ป่าเต็งรัง",
+            "choice_text": "องค์การนาโต",
+            "is_correct": false,
+            "reasoning": ""
+          }
+        ]
+      },
+      {
+        "question_text": "ฝ่ายอักษะ (Axis Powers) ในสงครามโลกครั้งที่ 2 ประกอบด้วยประเทศหลักกลุ่มใด",
+        "type": "multiple",
+        "choice": [
+          {
+            "choice_text": "อังกฤษ, ฝรั่งเศส, สหรัฐฯ",
             "is_correct": false,
             "reasoning": ""
           },
           {
-            "choice_text": "ป่าหญ้า",
+            "choice_text": "เยอรมนี, อิตาลี, ญี่ปุ่น",
+            "is_correct": true,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "รัสเซีย, จีน, เกาหลี",
+            "is_correct": false,
+            "reasoning": ""
+          },
+          {
+            "choice_text": "ออสเตรีย, ฮังการี, ตุรกี",
             "is_correct": false,
             "reasoning": ""
           }
